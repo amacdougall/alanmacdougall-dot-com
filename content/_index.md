@@ -3,39 +3,32 @@ title: Introduction
 type: docs
 ---
 
-# Acerbo datus maxime
+# Alan MacDougall
 
-{{< columns >}}
-## Astris ipse furtiva
+## Profile
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
+My name is Alan MacDougall. I am a software developer who lives and works in
+NYC. I work mainly in JavaScript and Ruby these days, but I have experience all
+up and down the stack, from ReactJS webapps to raw SQL, and in many ecosystems
+and languages.
 
-<--->
+My heart is closer to the server-side than to the front end. I'm happier with
+SQL than HTML. I know my way around HTML and CSS, but I prefer to work with a
+skilled designer. I like to write code that is easy to understand and survives
+the test of time. To get the most out of me, give me a codebase smothered in
+technical debt and let me help you dig out.
 
-## Suis quot vota
+I have worked on [GetFeedback](https://www.getfeedback.com) for the last few
+years, and am currently the engineering manager on the team which handles our
+most high-value integrations.
 
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
-{{< /columns >}}
+For the last six and a half years, I worked as a "middle-end" developer melding
+business logic with UI programming in a complex single-page application, the
+card design system at the heart of [Paperless Post](https://www.paperlesspost.com).
+I am proud to be have worked on such a successful system as part of a skilled team.
+Some of my contributions are [summarized here](/professional-work/).
 
+In my spare time, I have written some [technical articles](/technical-writing/)
+and hacked on some [side projects](/side-projects/).
 
-## Tempora nisi nunc
-
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
-
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
-
-## Locis suis novi cum suoque decidit eadem
-
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab?
+I am not looking for work.
