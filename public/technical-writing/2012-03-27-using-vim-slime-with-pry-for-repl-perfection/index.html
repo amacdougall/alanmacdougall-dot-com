@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.79.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Using vim-slime with pry for REPL perfection #  I used to use Python for my everyday scripting tasks, but since I started working at Paperless Post, a Rails shop, I&rsquo;ve felt like investing some skill points in Ruby would be a wise investment. Ruby is fun to write, but my workflow suffered from a severe lack of interactive programming support. No, irb doesn&rsquo;t cut it, not for someone used to the mighty Dreampie.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Using vim-slime with pry for REPL perfection" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/" />
+
+<title>Using vim-slime with pry for REPL perfection | Alan MacDougall</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/index.xml" title="Alan MacDougall" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Alan MacDougall</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/professional-work/" class="">Professional Work</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle" checked />
+    <label for="section-2074b91aa0ad5b9c95e9ba3de764e002" class="flex justify-between">
+      <a href="https://alanmacdougall.com/technical-writing/" class="">Technical Writing</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/how-we-added-time-travel-to-paperless-post/" class="">How We Added Time Travel to Paperless Post</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/" class="">Introducing underscore.as</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/" class="">Anonymous Functions in AS3</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/" class="">Understanding Closures and Context</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/" class="">Closures in List Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/" class="">Function Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2013-02-03-refactoring-to-events/" class="">Refactoring to Events</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/" class=" active">Using vim-slime with pry for REPL perfection</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/" class="">Interactive Debugging with Pry</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class="">Quick Block Uncommenting</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/side-projects/" class="">Side Projects</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/resume/" class="">Resume</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/amacdougall" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Using vim-slime with pry for REPL perfection</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-vim-slime-with-pry-for-repl-perfection">Using vim-slime with pry for REPL perfection</a>
+      <ul>
+        <li><a href="#the-tools">The Tools</a></li>
+        <li><a href="#the-steps">The Steps</a></li>
+        <li><a href="#the-payoff">The Payoff</a></li>
+        <li><a href="#update-pry-as-a-stepping-debugger">Update: Pry as a Stepping Debugger</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="using-vim-slime-with-pry-for-repl-perfection">
+  Using vim-slime with pry for REPL perfection
+  <a class="anchor" href="#using-vim-slime-with-pry-for-repl-perfection">#</a>
+</h1>
+<p>I used to use Python for my everyday scripting tasks, but since I started
+working at <a href="http://www.paperlesspost.com">Paperless Post</a>, a Rails shop, I&rsquo;ve
+felt like investing some skill points in Ruby would be a wise investment. Ruby
+is fun to write, but my workflow suffered from a severe lack of interactive
+programming support. No, irb doesn&rsquo;t cut it, not for someone used to the mighty
+<a href="http://dreampie.sourceforge.net/">Dreampie</a>. I was heartbroken&hellip; until I
+discovered an alternative. It&rsquo;s not a single powerful app, like
+Dreampie — instead, I had to stitch together several tools
+to get the same effects. But it makes exploratory programming a breeze, and
+that&rsquo;s more than I can say for irb.</p>
+<p>To build this interactive-programming Frankenstein&rsquo;s monster, you&rsquo;ll need three
+tools: vim, tmux, and Pry.</p>
+<h2 id="the-tools">
+  The Tools
+  <a class="anchor" href="#the-tools">#</a>
+</h2>
+<p><a href="http://tmux.sourceforge.net/">tmux</a> is
+<a href="http://www.gnu.org/software/screen/">GNU screen</a> if GNU screen beat the final
+boss and started again with NewGame+. It&rsquo;s a powerful beast, and I&rsquo;ve barely
+begun to scratch the surface. I like its status bar and scrollback pager, and
+when sshing into a remote, tmux splits are like mojitos on a hot
+day — once you have them, you realize you needed them all
+along.</p>
+<p><a href="http://pry.github.com/">Pry</a> is a replacement for irb. If I&rsquo;ve barely scratched
+the surface of tmux, it&rsquo;s safe to say that I haven&rsquo;t even given Pry a belly rub.
+Since my Ruby is as rusty as an old railroad bridge, I&rsquo;ve gotten a lot of
+mileage out of its <code>ls</code> and <code>show-doc</code> features. Did you know that <code>ls []</code>, for
+instance, shows not only all the properties and methods of the object, but what
+module those methods came from? <em>Exceedingly</em> useful when working with a
+codebase laced with mixins. You can use <code>pry</code> as your Rails console by invoking
+<a href="https://github.com/pry/pry/wiki/Setting-up-Rails-or-Heroku-to-use-Pry">these incantations</a>.</p>
+<p><a href="http://www.vim.org/">vim</a> needs no introduction, but you&rsquo;ll also need the
+<a href="https://github.com/jpalardy/vim-slime">vim-slime</a> plugin, which lets you send
+text straight from vim into tmux. That&rsquo;s what ties this whole mess together and
+makes it work. Install the plugin and follow the configuration steps in its
+README.</p>
+<h2 id="the-steps">
+  The Steps
+  <a class="anchor" href="#the-steps">#</a>
+</h2>
+<ol>
+<li>Run vim.</li>
+<li>Run tmux in a separate terminal.</li>
+<li>Run pry in a tmux window.</li>
+<li>Type some Ruby in vim and return to normal mode.</li>
+<li><code>C-c C-c</code>; you can just hold Ctrl and double-tap <code>c</code>.</li>
+</ol>
+<p>Now that entire paragraph of Ruby code — the line you&rsquo;re on
+and all adjacent lines north and south of it — gets sent to
+the pry session and executed. You&rsquo;re in business. You can also visually select
+some specific lines and hit the same sequence. Same deal.</p>
+<h2 id="the-payoff">
+  The Payoff
+  <a class="anchor" href="#the-payoff">#</a>
+</h2>
+<p>Write your Ruby program line by line, testing each line by sending it to pry.
+By using pry&rsquo;s <code>cd</code> function, you can even go into a class and define or
+redefine its methods. Try this out:</p>
+<pre><code>class Test
+  def greeting
+    &quot;hello&quot;
+  end
+end
+
+test = Test.new
+
+cd Test
+
+def greeting
+  &quot;what's up?&quot;
+end
+
+cd ..
+
+test.greeting # returns &quot;what's up?&quot;
+</code></pre><p>Since you&rsquo;re writing the program right there in vim, there&rsquo;s relatively little
+cleanup necessary to get the code into a useable form; and since you&rsquo;re testing
+it in pry all along, there&rsquo;s no write/run cycle to use up your keystrokes or
+mental effort. Writing, experimenting, testing, and polishing are as tight as
+four fingers in a fist.</p>
+<h2 id="update-pry-as-a-stepping-debugger">
+  Update: Pry as a Stepping Debugger
+  <a class="anchor" href="#update-pry-as-a-stepping-debugger">#</a>
+</h2>
+<p>Since writing this post, I&rsquo;ve learned a lot more about how to use Pry to debug a
+running program. Yes, even Rails. <a href="/technical-writing/2012-06-08-interactive-debugging-with-pry">Interactive Debugging with Pry</a>
+has the scoop.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-vim-slime-with-pry-for-repl-perfection">Using vim-slime with pry for REPL perfection</a>
+      <ul>
+        <li><a href="#the-tools">The Tools</a></li>
+        <li><a href="#the-steps">The Steps</a></li>
+        <li><a href="#the-payoff">The Payoff</a></li>
+        <li><a href="#update-pry-as-a-stepping-debugger">Update: Pry as a Stepping Debugger</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

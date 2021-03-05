@@ -5,16 +5,17 @@
   <meta name="generator" content="Hugo 0.79.0" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Tags" />
+<meta name="description" content="Quick Block Uncommenting #  A quick and easy way of commenting or uncommenting large blocks of code in languages with multiline comments, such as the /* wing comments */ found in C-like languages:
+/* DEBUG: display complicated logging data $.log(&quot;Baking.Cookies.recipe.build:&quot;, &quot;recipe_id =&gt; &quot;, recipe_id, &quot;; recipe_contents =&gt; &quot;, $.extend(true, {}, recipe), // deep clone &quot;; options =&gt; &quot;, options ); // */ Right now the whole block is commented out; but when you cap the top wing comment, you get this:">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Quick Block Uncommenting" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://alanmacdougall.com/tags/" />
+<meta property="og:url" content="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" />
 
-<title>Tags | Alan MacDougall</title>
+<title>Quick Block Uncommenting | Alan MacDougall</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/tags/index.xml" title="Alan MacDougall" />
+<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/index.xml" title="Alan MacDougall" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -78,7 +79,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle"  />
+    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle" checked />
     <label for="section-2074b91aa0ad5b9c95e9ba3de764e002" class="flex justify-between">
       <a href="https://alanmacdougall.com/technical-writing/" class="">Technical Writing</a>
       <span>▾</span>
@@ -257,7 +258,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class="">Quick Block Uncommenting</a>
+    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class=" active">Quick Block Uncommenting</a>
   
 
           
@@ -356,7 +357,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Tags</strong>
+  <strong>Quick Block Uncommenting</strong>
 
   <label for="toc-control">
     
@@ -369,27 +370,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav>
+  <nav id="TableOfContents">
   <ul>
-  
-    
-    <li class="book-section-flat">
-      <strong>Categories</strong>
-      <ul>
-      
-      </ul>
-    </li>
-    
-  
-    
-    <li class="book-section-flat">
-      <strong>Tags</strong>
-      <ul>
-      
-      </ul>
-    </li>
-    
-  
+    <li><a href="#quick-block-uncommenting">Quick Block Uncommenting</a></li>
   </ul>
 </nav>
 
@@ -401,11 +384,34 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  
-
-  
-
-
+  <article class="markdown"><h1 id="quick-block-uncommenting">
+  Quick Block Uncommenting
+  <a class="anchor" href="#quick-block-uncommenting">#</a>
+</h1>
+<p>A quick and easy way of commenting or uncommenting large blocks of code in
+languages with multiline comments, such as the <code>/* wing comments */</code> found in
+C-like languages:</p>
+<pre><code>/* DEBUG: display complicated logging data
+$.log(&quot;Baking.Cookies.recipe.build:&quot;,
+  &quot;recipe_id =&gt; &quot;, recipe_id,
+  &quot;; recipe_contents =&gt; &quot;, $.extend(true, {}, recipe), // deep clone
+  &quot;; options =&gt; &quot;, options
+);
+// */
+</code></pre><p>Right now the whole block is commented out; but when you cap the top wing
+comment, you get this:</p>
+<pre><code>/* DEBUG: display complicated logging data */
+$.log(&quot;Baking.Cookies.recipe.build:&quot;,
+  &quot;recipe_id =&gt; &quot;, recipe_id,
+  &quot;; recipe_contents =&gt; &quot;, $.extend(true, {}, recipe), // deep clone
+  &quot;; options =&gt; &quot;, options
+);
+// */
+</code></pre><p>Your code editor certainly provides a way of toggling comments, but over large
+code blocks this may involve making a large selection first. With this
+technique, adding or removing just two bytes can toggle comments on a block of
+any length.</p>
+</article>
  
       
 
@@ -433,27 +439,9 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  <nav>
+  <nav id="TableOfContents">
   <ul>
-  
-    
-    <li class="book-section-flat">
-      <strong>Categories</strong>
-      <ul>
-      
-      </ul>
-    </li>
-    
-  
-    
-    <li class="book-section-flat">
-      <strong>Tags</strong>
-      <ul>
-      
-      </ul>
-    </li>
-    
-  
+    <li><a href="#quick-block-uncommenting">Quick Block Uncommenting</a></li>
   </ul>
 </nav>
 

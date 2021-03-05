@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.79.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Understanding Closures and Context #  In the previous post, we looked at how anonymous functions can simplify code structure, but we skirted around their most powerful capability. An anonymous function can hold additional data, beyond what it gets from its arguments, and it can use that data in its work.
+By holding extra data, an anonymous function can be custom-designed, on the fly, to perform a specific duty; it can apply special logic it normally couldn&rsquo;t have access to; it can access application state; it can even &ldquo;transform&rdquo; other functions, changing their behavior, without needing access to their internals, through a sneaky substitution known as &ldquo;wrapping&rdquo;; but before we can put closures to work, we need to understand what makes them tick.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Understanding Closures and Context" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/" />
+
+<title>Understanding Closures and Context | Alan MacDougall</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/index.xml" title="Alan MacDougall" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Alan MacDougall</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/professional-work/" class="">Professional Work</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle" checked />
+    <label for="section-2074b91aa0ad5b9c95e9ba3de764e002" class="flex justify-between">
+      <a href="https://alanmacdougall.com/technical-writing/" class="">Technical Writing</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/how-we-added-time-travel-to-paperless-post/" class="">How We Added Time Travel to Paperless Post</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/" class="">Introducing underscore.as</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/" class="">Anonymous Functions in AS3</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/" class=" active">Understanding Closures and Context</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/" class="">Closures in List Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/" class="">Function Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2013-02-03-refactoring-to-events/" class="">Refactoring to Events</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/" class="">Using vim-slime with pry for REPL perfection</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/" class="">Interactive Debugging with Pry</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class="">Quick Block Uncommenting</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/side-projects/" class="">Side Projects</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/resume/" class="">Resume</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/amacdougall" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Understanding Closures and Context</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#understanding-closures-and-context">Understanding Closures and Context</a>
+      <ul>
+        <li><a href="#portable-scope">Portable Scope</a></li>
+        <li><a href="#a-little-context">A Little Context</a></li>
+        <li><a href="#common-closure-pitfalls">Common Closure Pitfalls</a></li>
+        <li><a href="#function-binding">Function Binding</a></li>
+        <li><a href="#the-potential-of-closures">The Potential of Closures</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="understanding-closures-and-context">
+  Understanding Closures and Context
+  <a class="anchor" href="#understanding-closures-and-context">#</a>
+</h1>
+<p>In the previous post, we looked at how anonymous functions can simplify code
+structure, but we skirted around their most powerful capability. An anonymous
+function can hold additional data, beyond what it gets from its arguments, and
+it can use that data in its work.</p>
+<p>By holding extra data, an anonymous function can be custom-designed, on the fly,
+to perform a specific duty; it can apply special logic it normally couldn&rsquo;t have
+access to; it can access application state; it can even &ldquo;transform&rdquo; other
+functions, changing their behavior, without needing access to their internals,
+through a sneaky substitution known as &ldquo;wrapping&rdquo;; but before we can put
+closures to work, we need to understand what makes them tick.</p>
+<blockquote class="book-hint info">
+  This article was written in spring 2012, but every word still holds true, and
+it applies to JavaScript with very minimal mental translation.
+</blockquote>
+
+<h2 id="portable-scope">
+  Portable Scope
+  <a class="anchor" href="#portable-scope">#</a>
+</h2>
+<p>Let&rsquo;s start with a normal, everyday function, defined in a class.</p>
+<pre><code>/* figure 01 */
+public class Student {
+  public var name:String;
+  public var grade:String;
+  public var tests:Array;
+
+  public function toString():String {
+    return name + &quot;, grade &quot; + grade;
+  }
+
+  public function averageScore():Number {
+    var connection:Connection = Database.getConnection();
+
+    // in real life, we'd do this all in SQL, of course
+    function retrieveGrade(test:Test):Number {
+      return connection.getGrade(test);
+    }
+
+    var total:Number = 0;
+
+    for each (var test:Test in tests) {
+      total += retrieveGrade(test);
+    }
+
+    return total / tests.length;
+  }
+}
+</code></pre><p>It should not be surprising that <code>toString</code> has access to the <code>name</code> and <code>grade</code>
+variables, because those variables are defined in the same <em>scope</em> as the
+<code>toString</code> function. And in <code>averageScore</code>, it should not be surprising that
+<code>retrieveGrade</code> has access to <code>connection</code>, because that variable is defined in
+the same scope as <code>retrieveGrade</code>. But how about this?</p>
+<pre><code>/* figure 02 */
+function nameGenerator():Function {
+  var names:Array = [&quot;Squirtle&quot;, &quot;Bulbasaur&quot;, &quot;Charmander&quot;, &quot;Pikachu&quot;];
+
+  var next:Function = function():String {
+    var result:String = names.shift();
+    names.push(result);
+    return result;
+  };
+
+  return next;
+}
+
+var nextName:Function = nameGenerator();
+trace(nextName()); // Squirtle
+trace(nextName()); // Bulbasaur
+</code></pre><p>In <code>nameGenerator</code>, the <code>names</code> array is defined; then the <code>next</code> function is
+defined; then the <code>next</code> function is returned&hellip; and then the <code>names</code> array
+<em>goes out of scope</em>. As far as outside code is concerned, everything that
+happens within <code>nameGenerator</code> happens in a sealed environment. Variables
+defined there cannot spill out of it. And this is true: but a function defined
+within a function <em>takes that scope with it</em>. When the <code>next</code> function is
+created, it gains access to the variables which were visible at that moment&hellip;
+and keeps that access as long as it exists.</p>
+<h2 id="a-little-context">
+  A Little Context
+  <a class="anchor" href="#a-little-context">#</a>
+</h2>
+<p>Imagine a very simple class definition:</p>
+<pre><code>/* figure 03 */
+public class Driver {
+  public var id:String;
+  public var license:DriversLicense;
+
+  public function canLegallyDrive():Boolean {
+    return license.valid;
+  }
+}
+
+var driver:Driver = Database.getRandomDriver();
+trace(&quot;License number &quot; + driver.license.id);
+trace(&quot;Can drive? &quot; + driver.canLegallyDrive());
+</code></pre><p>Outside the class definition, we need to specify <code>driver.license</code>, but within
+the class definition, we can refer to the <code>license</code> variable directly. That&rsquo;s
+because <code>license</code> is part of the <em>context</em> in which <code>canLegallyDrive</code> executes:
+that is, <code>license</code> is a property of <code>this</code>. Every single line of code which
+executes in AS3 has a <code>this</code> value, even if it is never directly referenced.
+Every identifier—every function name, every variable name—is a
+property of <code>this</code>. As I discussed in the last post, the value of <code>this</code> will
+change if the function is executed in a different scope&hellip; unless the function
+is a closure. Closures take their context—their <code>this</code> value—with
+them. A closure can have access to as many variables as the application
+requires, and good taste permits.</p>
+<p>Closures are wonderfully abusable. Just wait.</p>
+<h2 id="common-closure-pitfalls">
+  Common Closure Pitfalls
+  <a class="anchor" href="#common-closure-pitfalls">#</a>
+</h2>
+<p>When working with many UI objects at once, everyone makes this error at least once.</p>
+<pre><code>/* figure 04 */
+var paintings:Array = Database.getGalleryData().paintings;
+
+for each (var painting:Painting in paintings) {
+  // PaintingButton constructor draws all UI graphics
+  var paintingButton:Button = new PaintingButton(painting);
+  paintingButton.addEventListener(MouseEvent.CLICK,
+    function(event:Event):void {
+      showPainting(paintingButton.painting);
+    });
+}
+</code></pre><p>Looks straightforward, right? But when you run it, you&rsquo;ll find that it always
+acts as though you clicked on the last button in the list. This code creates a
+separate handler function for each button, but each function is created in the
+same scope; it has the same context; its <code>this</code> value is the same; and so each
+function has a reference to the same <code>paintingButton</code> variable. A <em>reference</em> to
+the variable, not a copy of its value. As the loop continues, the value of
+<code>paintingButton</code> changes; and whenever any of the handler functions are called,
+they access the <em>current</em> value of <code>paintingButton</code>.</p>
+<p>There are two ways to handle this situation. If you want to use anonymous
+functions, you will need to create an intermediate variable for each one, like
+this:</p>
+<pre><code>/* figure 05 */
+for each (var painting:Painting in paintings) {
+  var paintingButton:Button = new PaintingButton(painting);
+  paintingButton.addEventListener(MouseEvent.CLICK,
+    (function(paintingButton:PaintingButton):Function {
+      return function(event:Event):void {
+        showPainting(paintingButton.painting);
+      }
+    )(paintingButton));
+</code></pre><p>If this looks crazy to you, you&rsquo;re not alone. I would not put this in production
+code, just because it&rsquo;s a really odd construction. But understanding it is
+crucial to understanding closures. Let&rsquo;s break it down a step at a time:</p>
+<pre><code>/* figure 06 */
+function createHandler(paintingButton:PaintingButton):Function {
+  var handler:Function = function(event:Event):void {
+    showPainting(paintingButton.painting);
+  };
+  return handler;
+}
+</code></pre><p>This is a function which takes a <code>PaintingButton</code> argument, and returns an
+anonymous function which holds a reference to the argument variable. Here&rsquo;s the
+critical part: when we call <code>createHandler(monaLisaButton)</code>—that is, we
+call <code>createHandler</code> with a specific <code>PaintingButton</code>—the argument is
+assigned to the argument variable <code>paintingButton</code> for as long as
+<code>createHandler</code> continues to execute. That argument variable is not the same
+variable as <code>monaLisaButton</code>. When the inner function, <code>handler</code>, is created, it
+holds a reference to <code>paintingButton</code>, whose value has been set to the argument.
+It keeps that reference&hellip; even though <code>createHandler</code> completes and the
+argument variable otherwise goes out of scope. Since each invocation of
+<code>createHandler</code> creates a new short-lived argument variable, each function
+returned from <code>createHandler</code> has a different context—a different
+<code>this</code>—and thus a different <code>paintingButton</code> variable which can hold a
+different value.</p>
+<p>Armed with that knowledge, this code should make a little more sense:</p>
+<pre><code>/* figure 07 */
+var monaLisaButton:PaintingButton = new PaintingButton(monaLisa);
+
+var handler:Function = (function(paintingButton:PaintingButton):Function {
+  return function(event:Event):void {
+    showPainting(paintingButton.painting);
+  };
+})(monaLisaButton);
+
+monaLisaButton.addEventListener(MouseEvent.CLICK, handler);
+</code></pre><p>The value of <code>handler</code> is derived by declaring a function literal and
+immediately executing it. We don&rsquo;t store the function; we just invoke it
+instantly, by tacking <code>(monaLisaButton)</code> on right after the function literal.
+The parentheses around the function literal are not necessary; they&rsquo;re just a
+reminder to consider the function literal as an expression to be evaluated.
+These two constructions are equivalent:</p>
+<pre><code>/* figure 08 */
+var one:int = function():int {return 1;}(); // execute immediately
+var two:int = (function():int {return 2;})(); // a bit clearer?
+</code></pre><p>You should be able to understand exactly why figure 05 works now, but in
+practice, it&rsquo;s a clear-cut case of &ldquo;closure abuse&rdquo;. Here&rsquo;s a better approach:</p>
+<pre><code>/* figure 09 */
+for each (var painting:Painting in paintings) {
+  var paintingButton:Button = new PaintingButton(painting);
+  paintingButton.addEventListener(MouseEvent.CLICK,
+    function(event:Event):void {
+      showPainting(PaintingButton(event.currentTarget).painting);
+    });
+}
+</code></pre><p>Much more pragmatic, much easier to think about. Like any programming tool,
+closures should only be used where the benefits are worth the extra effort.</p>
+<h2 id="function-binding">
+  Function Binding
+  <a class="anchor" href="#function-binding">#</a>
+</h2>
+<p>As discussed in the previous post, anonymous functions normally execute in the
+context in which they are called, not the context in which they are defined.
+True enough—unless you &ldquo;bind&rdquo; the functions. Here&rsquo;s the original example:</p>
+<pre><code>/* figure 10 */
+public class Foo {
+  public var name:String = &quot;Foo&quot;;
+  public var sayName:Function = function():void {
+    trace(this.name);
+  }
+}
+
+public class Bar {
+  public var name:String = &quot;Bar&quot;;
+  public var sayName:Function = null;
+}
+
+var foo:Foo = new Foo();
+var bar:Bar = new Bar();
+bar.sayName = foo.sayName;
+foo.sayName(); // traces &quot;Foo&quot;
+bar.sayName(); // traces &quot;Bar&quot;
+</code></pre><p>And here&rsquo;s one in which the <code>sayName</code> function is bound to the instance of
+<code>Foo</code>:</p>
+<pre><code>public class Foo {
+  public var name:String = &quot;Foo&quot;;
+  public var sayName:Function = bind(function():void {
+    trace(this.name);
+  });
+
+  private function bind(f:Function):Function {
+    var self:Foo = this;
+    return function(...args):* {
+      return f.apply(self, args);
+    };
+  }
+}
+
+public class Bar {
+  public var name:String = &quot;Bar&quot;;
+  public var sayName:Function = null;
+}
+
+var foo:Foo = new Foo();
+var bar:Bar = new Bar();
+bar.sayName = foo.sayName;
+foo.sayName(); // traces &quot;Foo&quot;
+bar.sayName(); // also traces &quot;Foo&quot;
+</code></pre><p>Every function is an instance of <code>Function</code>; and <code>Function</code> has two methods,
+<code>call</code> and <code>apply</code>. They&rsquo;re both similar in that they let the user specify the
+value of <code>this</code> for a specific invocation of the function. <code>Foo.bind</code> returns a
+function—a closure—which <em>always</em> calls the supplied method with the
+value of <code>this</code> at the time <code>bind</code> was executed. By making <code>this</code> immutable, it
+makes it safe to pass the function around without changing its behavior.</p>
+<p>This is exactly what the <code>function</code> keyword does, quietly and modestly, whenever
+you compile a SWF. To get the same behavior much more easily, simply do this:</p>
+<pre><code>/* figure 12 */
+public class Foo {
+  public var name:String = &quot;Foo&quot;;
+  public function sayName():String {
+    trace(this.name);
+  }
+}
+</code></pre><p>Honestly, function binding <em>per se</em> won&rsquo;t come up very much in AS3. Most
+functions are defined within classes, or can take advantage of normal scope
+rules and the closure mechanism to maintain access to the variables they need.
+But the core idea of a function which <em>transforms</em> other functions will come up
+time and again, not only in AS3 but in JavaScript, Ruby, Python, and other
+languages.</p>
+<h2 id="the-potential-of-closures">
+  The Potential of Closures
+  <a class="anchor" href="#the-potential-of-closures">#</a>
+</h2>
+<p>In the next post, we&rsquo;ll put closures to work, from simple list manipulation to
+rewriting application behavior on the fly; and with any luck, you will begin to
+see just what potential lies buried within these concepts.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#understanding-closures-and-context">Understanding Closures and Context</a>
+      <ul>
+        <li><a href="#portable-scope">Portable Scope</a></li>
+        <li><a href="#a-little-context">A Little Context</a></li>
+        <li><a href="#common-closure-pitfalls">Common Closure Pitfalls</a></li>
+        <li><a href="#function-binding">Function Binding</a></li>
+        <li><a href="#the-potential-of-closures">The Potential of Closures</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

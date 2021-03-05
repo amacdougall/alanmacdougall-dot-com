@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.79.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introducing underscore.as #  underscore.as is an ActionScript 3.0 port of Jeremy Ashkenas&rsquo;s excellent underscore.js library. Like its JavaScript original, underscore.as provides a quick syntax for functional programming concepts. Unlike the original, underscore.as is not idiomatic: it doesn&rsquo;t look like the kind of ActionScript you probably write every day. You may have to adjust your programming style to take full advantage of it. I hope this quick introduction will explain why you should bother.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Introducing underscore.as" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/" />
+
+<title>Introducing underscore.as | Alan MacDougall</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/index.xml" title="Alan MacDougall" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Alan MacDougall</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/professional-work/" class="">Professional Work</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle" checked />
+    <label for="section-2074b91aa0ad5b9c95e9ba3de764e002" class="flex justify-between">
+      <a href="https://alanmacdougall.com/technical-writing/" class="">Technical Writing</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/how-we-added-time-travel-to-paperless-post/" class="">How We Added Time Travel to Paperless Post</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/" class=" active">Introducing underscore.as</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/" class="">Anonymous Functions in AS3</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/" class="">Understanding Closures and Context</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/" class="">Closures in List Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/" class="">Function Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2013-02-03-refactoring-to-events/" class="">Refactoring to Events</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/" class="">Using vim-slime with pry for REPL perfection</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/" class="">Interactive Debugging with Pry</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class="">Quick Block Uncommenting</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/side-projects/" class="">Side Projects</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/resume/" class="">Resume</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/amacdougall" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Introducing underscore.as</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducing-underscoreas">Introducing underscore.as</a>
+      <ul>
+        <li><a href="#actionscript-30-is-java">ActionScript 3.0 is Java</a></li>
+        <li><a href="#actionscript-30-is-javascript">ActionScript 3.0 is JavaScript</a></li>
+        <li><a href="#modifying-collections">Modifying Collections</a></li>
+        <li><a href="#modifying-functions">Modifying Functions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="introducing-underscoreas">
+  Introducing underscore.as
+  <a class="anchor" href="#introducing-underscoreas">#</a>
+</h1>
+<p><a href="http://www.github.com/amacdougall/underscore.as">underscore.as</a> is an
+ActionScript 3.0 port of Jeremy Ashkenas&rsquo;s excellent
+<a href="http://underscorejs.org/">underscore.js</a> library. Like its
+JavaScript original, underscore.as provides a quick syntax for functional
+programming concepts. Unlike the original, underscore.as is not idiomatic: it
+doesn&rsquo;t look like the kind of ActionScript you probably write every day. You
+may have to adjust your programming style to take full advantage of it. I hope
+this quick introduction will explain why you should bother.</p>
+<blockquote class="book-hint info">
+  This article was written in spring 2012, but if you are still using AS3, you may
+still get some good use out of it, and the library it describes. Read on!
+</blockquote>
+
+<h2 id="actionscript-30-is-java">
+  ActionScript 3.0 is Java
+  <a class="anchor" href="#actionscript-30-is-java">#</a>
+</h2>
+<p>If you&rsquo;re old, wrinkled, and toothless—about 35 in programmer
+years—you remember the Flash 5 and ActionScript 1.0 versions of
+ActionScript. They were the first ones to work like JavaScript, and despite
+their many flaws, they had some useful ideas at their core: prototype-based
+inheritance, mixins, anonymous functions, dynamic classes. Presented with
+these new features, programmers immediately used them for evil. Not only was
+code scattered wildly among dozens of timeline frames and stage instances, but
+properties were added to objects willy-nilly without rhyme, reason, or
+documentation. Broken function scope and an undocumented event system made
+anonymous functions difficult to use as event handlers. Even the base API
+presented an inconsistent mishmash of interfaces.</p>
+<p>Beginning with ActionScript 2.0, the language designers began painting over
+the language with an explicit class system, static type annotations, even
+interfaces. Programmers could now write ActionScript as if it were Java, and
+they did; but old-timers were still free to assign function objects to
+<code>MovieClip.onRelease</code> to their heart&rsquo;s content. But with ActionScript 3.0,
+everything changed: old-timers cried bloody murder as static types, object
+orientation, and addEventListener carried the day.</p>
+<p>Polyglot programmers will immediately notice that most ActionScript 3.0 code
+today looks a great deal like Java. This is not accidental. ActionScript 3.0 was
+developed hand in hand with Flex in an attempt to woo
+<a href="http://www.thedailywtf.com">enterprise developers</a>, with considerable success.
+&ldquo;Enterprise Flex&rdquo; is definitely a thing now. But in the process, quick and easy
+Flash development has gotten bogged down in boilerplate; and at the same time,
+things that should have gotten easier with each language version have stayed
+pretty much the same.</p>
+<h2 id="actionscript-30-is-javascript">
+  ActionScript 3.0 is JavaScript
+  <a class="anchor" href="#actionscript-30-is-javascript">#</a>
+</h2>
+<p>But Adobe added one more feature with AS3: closures. I&rsquo;ll explain these
+mysterious beasts in detail in a later post, but for now it&rsquo;s enough to say
+that a closure is a special type of function which contains extra information,
+beyond the arguments it is given. A closure can do things a normal function
+cannot. With the addition of closures, ActionScript 3.0 gained most of the
+flexibility and power of JavaScript—and if you don&rsquo;t believe that
+JavaScript has flexibility and power, look at what libraries like jQuery are
+doing under the hood. With a little help from static initializers, language
+hackery, and the &ldquo;:*&rdquo; type annotation, we can achieve in AS3 almost anything
+we can achieve in JavaScript.</p>
+<p>Through judicious use of closures, it is possible to create simple constructs
+of great power, escaping the verbose Java-like syntax of AS3; or, if you
+prefer, building upon the spartan simplicity of core JavaScript. Here are a
+few examples of idiomatic AS3 code which can be simplified by use of
+underscore.as.</p>
+<h2 id="modifying-collections">
+  Modifying Collections
+  <a class="anchor" href="#modifying-collections">#</a>
+</h2>
+<p>For all the examples below, assume the following list.</p>
+<pre><code>/* figure 01 */
+var list:Array = [
+  {name: &quot;Alice&quot;, age: 35},
+  {name: &quot;Bob&quot;, age: 24},
+  {name: &quot;Carol&quot;, age: 31}
+];
+</code></pre><p>A common array filtering task: get only the array elements matching certain
+criteria. Normally, this requires a loop and an results array, but with
+underscore.as, the select() function prepares the results list on the fly. Using
+the syntax <code>_(list).select(f)</code>, it returns a list of elements for which the
+function <code>f</code> returned true.</p>
+<pre><code>/* figure 02 */
+// idiomatic AS3
+var result:Array = [];
+for each (var person:Object in list) {
+  if (person.age &gt; 30) {
+    result.push(person);
+  }
+}
+
+// underscore.as
+var result:Array = _(list).select(function(person:Object):Boolean {
+  return person.age &gt; 30;
+});
+</code></pre><p>Another common task: get a particular property of each element. Again,
+underscore.as takes care of the plumbing.</p>
+<pre><code>/* figure 03 */
+// idiomatic AS3
+var result:Array = [];
+for each (var person:Object in list) {
+  result.push(person.name);
+}
+
+// underscore.as
+var result:Array = _(list).pluck(&quot;name&quot;);
+</code></pre><p>It also makes it easy to get the results of a function for each element&hellip;</p>
+<pre><code>/* figure 04 */
+// idiomatic AS3
+var result:Array = [];
+for each (var person:Object in list) {
+  result.push(buildIcon(person));
+}
+
+// underscore.as
+var result:Array = _(list).map(buildIcon);
+</code></pre><p>&hellip;or to just <em>do</em> something to each element:</p>
+<pre><code>/* figure 05 */
+// idiomatic AS3
+for each (var person:Object in list) {
+  trace(person.name + &quot;: &quot; + person.age);
+}
+
+// underscore.as
+_(list).each(function(person:*):void {
+  trace(person.name + &quot;: &quot; + person.age);
+}
+</code></pre><p>Okay, maybe that last one wasn&rsquo;t so impressive&hellip; but what if we want to combine
+these operations? Let&rsquo;s filter the elements on a criterion, then build an icon
+for each one, setting each icon to 50% alpha.</p>
+<pre><code>/* figure 06 */
+// idiomatic AS3
+var result:Array = [];
+for each (var person:Object in list) {
+  if (person.age &gt; 30) {
+    var icon:Sprite = buildIcon(person);
+    icon.alpha = 0.5;
+    result.push(icon);
+  }
+}
+
+// underscore.as
+var result:Array = _(list).chain().select(function(person:Object):Boolean {
+  return person.age &gt; 30;
+}).map(buildIcon).map(function(icon:Sprite):Sprite {
+  icon.alpha = 0.5;
+}).value();
+</code></pre><p>You may be thinking, at this point, that these two examples are about the same
+length, and the first is more readable, because it looks more like normal AS3
+code. You would be right. But let&rsquo;s revisit that example, assuming the
+existence of these two functions:</p>
+<pre><code>/* figure 07 */
+// function generators
+function greaterThan(threshold:int):Function {
+  return function(age:int):Boolean {
+    return age &gt; threshold;
+  };
+}
+
+function setAlphaTo(value:Number):Function {
+  return function(target:Sprite):Sprite {
+    target.alpha = value;
+    return target;
+  };
+}
+</code></pre><p>These are functions which create special-purpose functions, functions that
+come equipped with information they need to do their work. This process is
+called &ldquo;partial application,&rdquo; and it&rsquo;s one major use of the power of closures.
+I&rsquo;ll explain what it means soon. For now, just look at this:</p>
+<pre><code>/* figure 08 */
+// underscore.as
+var result:Array = _(list).chain()
+  .select(greaterThan(30))
+  .map(buildIcon)
+  .map(setAlphaTo(0.5))
+  .value();
+</code></pre><p>Suddenly the code looks less like AS3 and more like a special language designed
+to do exactly what you wanted. That&rsquo;s the power of functional programming.</p>
+<h2 id="modifying-functions">
+  Modifying Functions
+  <a class="anchor" href="#modifying-functions">#</a>
+</h2>
+<p>underscore.as also makes it easy to modify functions themselves, and this is
+where it really makes hard things easy. For instance, executing a function
+after a delay:</p>
+<pre><code>/* figure 09 */
+// idiomatic AS3
+var timer:Timer = new Timer(1000, 1);
+timer.addEventListener(TimerEvent.TIMER_COMPLETE,
+  function(event:Event):void {
+    doStuff();
+  });
+timer.start();
+
+// underscore.as
+_(doStuff).delay(1000);
+</code></pre><p>When handling user input, sometimes you want to execute an event handler only
+after a stream of input events has ceased. Responding to typed input by querying
+a database, perhaps, or handling a scrollbar drag by loading more content. This
+concept goes back to the earliest days of electrical engineering, where a lever
+might literally bounce when flipped, causing a false double signal; thus,
+ignoring extra inputs is called &ldquo;debouncing.&rdquo; In traditional AS3, it&rsquo;s fairly
+verbose, but underscore.as handles it in a single call:</p>
+<pre><code>/* figure 10 */
+// relatively idiomatic AS3
+var scrollDelayTimer:Timer = new Timer(250, 1);
+scrollDelayTimer.addEventListener(TimerEvent.TIMER_COMPLETE,
+  function(event:Event):void {
+    update();
+  });
+
+function handleScroll(event:Event):void {
+  if (scrollDelayTimer.isRunning) {
+    scrollDelayTimer.reset();
+  }
+  scrollDelayTimer.start();
+};
+
+scrollBar.addEventListener(Event.CHANGE, handleScroll);
+
+
+// underscore.as
+function handleScroll(event:Event):void {
+  update();
+}
+
+scrollBar.addEventListener(Event.CHANGE, _(handleScroll).debounce(250));
+</code></pre><p>You could do the idiomatic version in fewer lines&hellip; by making it less
+idiomatic. The more you add closures and anonymous functions, the closer you
+get to how underscore.as is implemented under the hood in the first place.</p>
+<p>One last example: built-in result caching. If we have a function which takes
+time to get a result, but it always gets the same result for the same input
+value, it is wise to cache each result so we can get it instantly on subsequent
+calls.</p>
+<pre><code>/* figure 11 */
+// idiomatic AS3
+// original...
+function verySlowLookup(id:String):ComplexObject {
+  return getFromLegacyDatabase(id);
+}
+
+// and with caching:
+var lookupResults:Dictionary = new Dictionary();
+
+function verySlowLookup(id:String):ComplexObject {
+  return lookupResults[id] || getFromLegacyDatabase(id);
+}
+
+// underscore.as
+var verySlowLookup:Function = _(getFromLegacyDatabase).memoize();
+</code></pre><p>Ready to start playing with it yourself?
+<a href="http://github.com/amacdougall/underscore.as">Grab it from github</a>,
+and read the inline documentation in com.alanmacdougall.underscore._
+for instructions; the
+<a href="http://documentcloud.github.com/underscore/">documentation for underscore.js</a>
+will help too.</p>
+<p>Interested, but want to know more? Stay tuned: in other posts, I explain
+anonymous functions, closures, and how they apply to both standard AS3 and
+underscore.as.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducing-underscoreas">Introducing underscore.as</a>
+      <ul>
+        <li><a href="#actionscript-30-is-java">ActionScript 3.0 is Java</a></li>
+        <li><a href="#actionscript-30-is-javascript">ActionScript 3.0 is JavaScript</a></li>
+        <li><a href="#modifying-collections">Modifying Collections</a></li>
+        <li><a href="#modifying-functions">Modifying Functions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

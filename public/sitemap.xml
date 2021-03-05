@@ -3,167 +3,86 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://alanmacdougall.com/docs/example/</loc>
+    <loc>https://alanmacdougall.com/technical-writing/how-we-added-time-travel-to-paperless-post/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/docs/example/table-of-contents/with-toc/</loc>
+    <loc>https://alanmacdougall.com/professional-work/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/docs/example/table-of-contents/without-toc/</loc>
+    <loc>https://alanmacdougall.com/technical-writing/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/posts/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>https://alanmacdougall.com/side-projects/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/posts/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <loc>https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/docs/example/table-of-contents/</loc>
+    <loc>https://alanmacdougall.com/resume/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/docs/example/collapsed/</loc>
+    <loc>https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/posts/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/posts/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alanmacdougall.com/technical-writing/2013-02-03-refactoring-to-events/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://alanmacdougall.com/categories/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alanmacdougall.com/categories/Development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/posts/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://alanmacdougall.com/</loc>
+    <lastmod>2020-12-07T22:58:54-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://alanmacdougall.com/tags/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/example/collapsed/3rd-level/4th-level/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/example/collapsed/3rd-level/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/example/hidden/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/buttons/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/columns/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/details/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/expand/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/hints/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/katex/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/mermaid/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/section/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/section/page1/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/section/page2/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/shortcodes/tabs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://alanmacdougall.com/docs/</loc>
   </url>
   
 </urlset>

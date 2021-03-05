@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.79.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Closures in List Transformation #  A closure stores information. It can have access to a single parameter given to it at runtime; or to an internal data structure it can use to make decisions; or even to large chunks of your program&rsquo;s state, letting you pass behavior without needing to pass information. In this post, I&rsquo;ll show you how to use closures to work with arrays: in a few lines of code, you can grind a nested data structure down to just a handful of targeted values.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Closures in List Transformation" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/" />
+
+<title>Closures in List Transformation | Alan MacDougall</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/index.xml" title="Alan MacDougall" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Alan MacDougall</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/professional-work/" class="">Professional Work</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle" checked />
+    <label for="section-2074b91aa0ad5b9c95e9ba3de764e002" class="flex justify-between">
+      <a href="https://alanmacdougall.com/technical-writing/" class="">Technical Writing</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/how-we-added-time-travel-to-paperless-post/" class="">How We Added Time Travel to Paperless Post</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/" class="">Introducing underscore.as</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/" class="">Anonymous Functions in AS3</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/" class="">Understanding Closures and Context</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/" class=" active">Closures in List Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/" class="">Function Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2013-02-03-refactoring-to-events/" class="">Refactoring to Events</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/" class="">Using vim-slime with pry for REPL perfection</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/" class="">Interactive Debugging with Pry</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class="">Quick Block Uncommenting</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/side-projects/" class="">Side Projects</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/resume/" class="">Resume</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/amacdougall" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Closures in List Transformation</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#closures-in-list-transformation">Closures in List Transformation</a>
+      <ul>
+        <li><a href="#basic-list-filtering">Basic List Filtering</a></li>
+        <li><a href="#smart-filters">Smart Filters</a></li>
+        <li><a href="#smarter-filters">Smarter Filters</a></li>
+        <li><a href="#filter-creator-creators">Filter Creator Creators</a></li>
+        <li><a href="#list-transformation">List Transformation</a></li>
+        <li><a href="#smart-maps-and-smarter-maps">Smart Maps and Smarter Maps</a></li>
+        <li><a href="#next-up-function-mutation">Next Up: Function Mutation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="closures-in-list-transformation">
+  Closures in List Transformation
+  <a class="anchor" href="#closures-in-list-transformation">#</a>
+</h1>
+<p>A closure stores information. It can have access to a single parameter given to
+it at runtime; or to an internal data structure it can use to make decisions; or
+even to large chunks of your program&rsquo;s state, letting you pass <em>behavior</em>
+without needing to pass <em>information</em>. In this post, I&rsquo;ll show you how to use
+closures to work with arrays: in a few lines of code, you can grind a nested
+data structure down to just a handful of targeted values. With a few more, you
+can transform them into anything you need. And with a pinch of closure fairy
+dust, you can make those filters and transforms <em>magical</em>, building powerful and
+intelligent functionality up from a few lines of initializer code. The results
+will fascinate and horrify. But mostly fascinate.</p>
+<blockquote class="book-hint info">
+  This article was written in spring 2012, but every word still holds true, and
+it applies to JavaScript with very minimal mental translation.
+</blockquote>
+
+<h2 id="basic-list-filtering">
+  Basic List Filtering
+  <a class="anchor" href="#basic-list-filtering">#</a>
+</h2>
+<p>Let&rsquo;s start slow: filtering a list. Let&rsquo;s start with this class, which
+represents an enemy in a video game.</p>
+<pre><code>/* figure 01 */
+public class Alien extends Sprite {
+  public var level:int;   // experience level
+  public var health:int;  // remaining health
+  public var weapon:Weapon; // equipped weapon
+}
+</code></pre><p>Now create a bunch of aliens at random xy positions between 100 and -100. To
+figure out which ones are onscreen at the moment, we&rsquo;ll filter out all the
+aliens whose x and y are less than 0; or to put it another way, <em>select</em> all the
+aliens whose x and y are greater.</p>
+<pre><code>/* figure 02 */
+/**
+ * Returns a random number between abs and -abs.
+ */
+function randomPosition(abs:Number):Number {
+  return (abs * 2 * Math.random()) - abs;
+}
+
+// create 12 new aliens at random positions
+var aliens:Array = [];
+while (aliens.length &lt; 12) {
+  var alien:Alien = new Alien();
+  alien.x = randomPosition(100);
+  alien.y = randomPosition(100);
+  aliens.push(alien);
+}
+
+// get only the aliens with x and y &gt; 0
+var onscreenAliens:Array = [];
+for each (var alien:Alien in aliens) {
+  if (alien.x &gt; 0 &amp;&amp; alien.y &gt; 0) {
+    onscreenAliens.push(alien);
+  }
+}
+
+// now rewrite it with Array.filter
+var onscreenAliens:Array = aliens.filter(
+  function(s:Sprite, i:int, a:Array):Boolean {
+    return sprite.x &gt; 0 &amp;&amp; sprite.y &gt; 0;
+  });
+</code></pre><p>If we know we&rsquo;re going to do a lot of these filtering operations, it makes sense
+to define the filter function somewhere else. And since <code>Array.filter</code> returns a
+new <code>Array</code> containing only the selected elements, we can chain the calls
+together.</p>
+<pre><code>/* figure 03 */
+/** Filter: returns only onscreen aliens. */
+function onScreen(alien:Alien, i:int, a:Array):Boolean {
+  return alien.x &gt; 0 &amp;&amp; alien.y &gt; 0;
+}
+
+/** Filter: returns only aliens wielding gauss rifles. */
+function hasGaussRifle(alien:Alien, i:int, a:Array):Boolean {
+  return alien.weapon.type == &quot;gaussRifle&quot;;
+}
+
+var rifleAliens:Array = aliens.filter(onScreen).filter(hasGaussRifle);
+</code></pre><p>With this method, we&rsquo;re getting closer to something useful and flexible; but we
+still need a separate function for every filtering condition, even if some of
+them are very simple. We need a way to parameterize our filters, and that&rsquo;s
+where closures come in.</p>
+<h2 id="smart-filters">
+  Smart Filters
+  <a class="anchor" href="#smart-filters">#</a>
+</h2>
+<p>From here on, we&rsquo;ll use the underscore.as version of <code>filter</code>, which doesn&rsquo;t
+require that obnoxious three-argument function. It does, however, require each
+chain to begin with <code>.chain()</code> and end with either <code>.value()</code> or <code>.each()</code>, for
+reasons we&rsquo;ll discuss soon. It&rsquo;s a tradeoff: underscore.as grants more power
+than <code>Array</code> has on its own, but requires the coder to invoke it. If you&rsquo;re only
+applying one filter, you don&rsquo;t need <code>.chain()</code> or <code>.value()</code>.</p>
+<p>In underscore.as, <code>select</code> is a synonym for <code>filter</code>. I prefer it, since I think
+it better reflects what the method really does: it selects only certain elements
+from the original list.</p>
+<pre><code>/* figure 04 */
+/** Filter builder: selects within rectangle. */
+function withinBounds(bounds:Rectangle):Function {
+  return function(alien:Alien):Boolean {
+    return bounds.containsPoint(new Point(alien.x, alien.y));
+  };
+}
+
+/** Filter builder: selects on weapon type. */
+function hasWeapon(weaponType:String):Function {
+  return function(alien:Alien):Boolean {
+    return alien.weapon.type == weaponType;
+  };
+}
+
+/** Filter builder: selects aliens of a minimum level. */
+function minLevel(level:int):Function {
+  return function(alien:Alien):Boolean {
+    return alien.level &gt;= level;
+  };
+}
+
+var grenadiers:Array = _(aliens).chain()
+  .select(withinBounds(new Rectangle(0, 0, 800, 600))
+  .select(hasWeapon(Weapon.PLASMA_LAUNCHER))
+  .value();
+
+var eliteRaiders:Array = _(aliens).chain()
+  .select(withinBounds(gameArea.getBounds(stage)))
+  .select(hasWeapon(Weapon.SHOCK_RIFLE))
+  .select(minLevel(5))
+  .value();
+</code></pre><p><code>withinBounds</code>, <code>hasWeapon</code>, and <code>minLevel</code> are not filter functions; they
+create filter functions on demand, each suited for a specific purpose. Combined
+with the inherent chaining capability of <code>Array.filter</code>, parameterized filters
+make it easy to mix and match filtering operations.</p>
+<p>Although underscore.as requires an explicit <code>chain</code> call at the start of a
+method chain, it also permits more operations than just <code>Array.filter</code>,
+<code>Array.map</code>, and <code>Array.forEach</code>. For example, <code>_.pluck</code> returns the value of
+the named property for each element in the target array. Here is a trivial
+example.</p>
+<pre><code>/* figure 05 */
+var cities:Array = [
+  {name: &quot;New York&quot;, state: &quot;NY&quot;},
+  {name: &quot;Houston&quot;, state: &quot;TX&quot;},
+  {name: &quot;Seattle&quot;, state: &quot;OR&quot;}
+];
+
+var states:Array = _(cities).pluck(&quot;state&quot;);
+// results in [&quot;NY&quot;, &quot;TX&quot;, &quot;OR&quot;]
+</code></pre><p>And here&rsquo;s an application to our alien situation.</p>
+<pre><code>/* figure 06 */
+// filter functions for underscore.as can be simpler. One example:
+/** Filter builder: selects Aliens by weapon type. */
+function hasWeapon(weaponType:String):Function {
+  return function(alien:Alien):Boolean {
+    return alien.weapon.type == weaponType;
+  };
+}
+
+/** Filter builder: selects Weapons by percentage of ammo remaining. */
+function maxAmmo(percentage:Number):Function {
+  return function(weapon:Weapon):Boolean {
+    return weapon.ammoCount / weapon.ammoMax &lt; percentage;
+  };
+}
+
+// here's a sequence that uses _.pluck to go down a level midstream.
+var grenadeLaunchers:Array = _(aliens).chain()
+  .select(withinBounds(gameArea.getBounds(stage)))
+  .select(hasWeapon(Weapon.PLASMA_LAUNCHER))
+  .pluck(&quot;weapon&quot;)
+  .select(maxAmmo(0.2))
+  .each(function(w:Weapon):void {
+    w.reload();
+  });
+</code></pre><p>As you can see, <code>_.select</code> and <code>_.pluck</code> make it easy to extract specific values
+from a multi-layered data structure and then do something to them. This style of
+element selection may already be familiar to you from libraries like
+<a href="http://www.jquery.com">jQuery</a>.</p>
+<h2 id="smarter-filters">
+  Smarter Filters
+  <a class="anchor" href="#smarter-filters">#</a>
+</h2>
+<p>It&rsquo;s handy to create a special-purpose filter function on the spot, but once
+created, that function always has the same effect. Closures can do more than
+that. Here&rsquo;s a filter function which filters out duplicate values, by storing an
+array of known elements.</p>
+<pre><code>/* figure 07 */
+import flash.utils.Dictionary;
+
+function unique():Function {
+  var known:Dictionary = new Dictionary();
+
+  return function(element:*):Boolean {
+    if (known[element]) {
+      return false;
+    } else {
+      known[element] = true; // any value will do
+      return true;
+    }
+  };
+}
+
+var list:Array = [1, 2, 1, 2, 1, 2, 3];
+var uniques:Array = _(list).unique(); // [1, 2, 3]
+</code></pre><p>The <code>unique</code> function defines a <code>Dictionary</code> whose keys will be the objects
+which have been passed into it so far. The values don&rsquo;t matter: the point of the
+<code>Dictionary</code> class is that it can have any object as a key, not just a string.
+As a pleasant side effect, we can use dictionaries to simulate the <code>Set</code> class
+in Java: a bag of unique values, nothing more or less. If we had stored known
+values in an <code>Array</code>, even detecting if an element is <em>in</em> the array at all
+would require us to compare the target element with every element in the array,
+at worst—and the worst would happen every time the uniqueness filter
+encountered a brand new element. With <code>Dictionary</code>, we do exactly one check for
+each incoming element.</p>
+<p>If it&rsquo;s not clear how the function is storing and using the <code>known</code> variable,
+here&rsquo;s a simpler use of the same concept:</p>
+<pre><code>/* figure 08 */
+function buildAccumulator(startingValue:Number):Function {
+  var total:Number = startingValue;
+
+  return function(n:Number):Number {
+    total += n;
+    return total;
+  };
+}
+
+var runningTotal:Function = buildAccumulator(0);
+var expenditures:Array = [
+  runningTotal(20),
+  runningTotal(24),
+  runningTotal(29),
+  runningTotal(22)
+];
+
+// expenditures is now [20, 44, 73, 95]
+</code></pre><p>Each time <code>runningTotal</code> is called, it adds the argument to its internal <code>total</code>
+variable and then returns the new value of <code>total</code>. The function will retain a
+reference to that variable for as long as it exists.</p>
+<p>To apply this concept to our game, let&rsquo;s grab aliens with a combined experience
+level not to exceed 20, with individual level 3 or higher, and at least
+80% health remaining.</p>
+<pre><code>/* figure 09 */
+/**
+ * Filter builder: selects Aliens until their combined level equals or
+ * exceeds levelCap.
+ */
+function combinedLevel(levelCap:int):Function {
+  var total:int = 0;
+
+  return function(alien:Alien):Boolean {
+    total += alien.level;
+    return total &lt;= levelCap;
+  };
+}
+
+// the minLevel and minHealthPercentage filters should be obvious
+
+var squad:Array = _(aliens).chain()
+  .filter(minLevel(3))
+  .filter(minHealthPercentage(0.8))
+  .filter(combinedLevel(20))
+  .value();
+</code></pre><h2 id="filter-creator-creators">
+  Filter Creator Creators
+  <a class="anchor" href="#filter-creator-creators">#</a>
+</h2>
+<p>At the risk of sounding like the infamous Java <code>FactoryFactory</code>, we&rsquo;ll go one
+layer deeper. We&rsquo;ve been making some filter builders which are quite similar &ndash;
+they just operate on different attributes. So why repeat ourselves?</p>
+<pre><code>/* figure 10 */
+/** Filter builder builder: for a minimum numeric property. */
+function minFilter(property:String):Function {
+  return function(minValue:Number):Function {
+    return function(object:*):Boolean {
+      return object[property] &lt;= minValue;
+    };
+  };
+}
+
+var filters:Object = {
+  minLevel: minFilter(&quot;level&quot;),
+  minHealth: minFilter(&quot;health&quot;)
+};
+</code></pre><p>For a certain type of person, a mere filter creator creator is peanuts. Why just
+filter our lists? Why not change them into something completely different? But
+personally, that&rsquo;s where I draw the line; I recoil from the brink; I carefully
+and quietly put the laptop down, close it with a gentle click, and go out and
+enjoy the nice weather. <em>Ha ha ha!</em> Just kidding!</p>
+<h2 id="list-transformation">
+  List Transformation
+  <a class="anchor" href="#list-transformation">#</a>
+</h2>
+<p>Meet <code>Array.map</code>.</p>
+<pre><code>/* figure 11 */
+function louder(s:String, i:int, a:Array):String {
+  return s.toUpperCase();
+}
+
+var words:Array = [&quot;correct&quot;, &quot;horse&quot;, &quot;battery&quot;, &quot;staple&quot;];
+trace(words.map(louder).join()); // CORRECT HORSE BATTERY STAPLE
+
+// like Array.filter, Array.map functions require three arguments
+function multiplyBy(n:Number, i:int, a:Array):Function {
+  return function(m:Number):Number {
+    return n * m;
+  };
+}
+
+var numbers:Array = [1, 2, 3, 4];
+var doubled:Array = numbers.map(multiplyBy(2)); // 2, 4, 6, 8
+</code></pre><p>While <code>filter</code> returns a <code>Boolean</code> to narrow down an existing list, <code>map</code>
+creates a new list, by executing a function on every element of the first list.
+An example from our game:</p>
+<pre><code>/* figure 12 */
+function bestWeapon():Function {
+  return function(alien:Alien):Weapon {
+    switch (alien.type) {
+      // we don't need break statements since each case returns
+      case &quot;soldier&quot;: return new Weapon(Weapon.SHOCK_RIFLE);
+      case &quot;sniper&quot;: return new Weapon(Weapon.GAUSS_RIFLE);
+      // ...other cases
+    }
+  };
+}
+
+var weapons:Array = _(aliens).map(bestWeapon);
+
+_(aliens).chain().zip(weapons).each(function(pair:Array) {
+  // each pair is an [alien, weapon] array
+  pair[0].weapon = pair[1];
+});
+</code></pre><p>In underscore.as, <code>_.zip</code> combines two arrays A and B into an array of pairs:
+<code>_([1, 2, 3]).zip(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code> results in <code>[[1, &quot;a&quot;], [2, &quot;b&quot;], [3, &quot;c&quot;]]</code>.
+Think of the values as teeth of a zipper. When you have two arrays whose
+elements belong together, in the same order—like our array of aliens and our
+array of weapons for them—<code>_.zip</code> is the tool to use.</p>
+<p>We call a function to get our best-weapon mapping function, because we <em>always</em>
+want to create a new function. It&rsquo;s a matter of style: would you rather remember
+that some maps and filters are used with <code>filter(myFilter)</code> and others are
+<code>filter(myFilter())</code>? Or would you rather just call them the same way all the
+time? Some filters, like the unique-element filter used above, <em>have</em> to be
+created anew each time they&rsquo;re used. So for consistency, we&rsquo;ll do this with all
+of them.</p>
+<h2 id="smart-maps-and-smarter-maps">
+  Smart Maps and Smarter Maps
+  <a class="anchor" href="#smart-maps-and-smarter-maps">#</a>
+</h2>
+<p>Just like filters, we can build mapping functions to perform particular actions.
+Check out how <code>withAmmoType</code> creates a new array, sure, but all the elements are
+the same—just with one property changed.</p>
+<pre><code>/* figure 13 */
+function withAmmoType(ammoType:String):Function {
+  return function(weapon:Weapon):Weapon {
+    weapon.ammoType = ammoType;
+    return weapon;
+  };
+}
+
+var weapons:Array = _(aliens).chain()
+  .map(bestWeapon())
+  .map(withAmmoType(Ammo.ARMOR_PIERCING))
+  .value();
+
+_(aliens).each(function(alien:Alien, index:int):Alien {
+  alien.weapon = weapons[index];
+});
+</code></pre><p>This way of assigning weapons to aliens may be easier to understand than the
+<code>_.zip</code> version, and it demonstrates that you can use the index argument to your
+filter and map functions in underscore.as—you just aren&rsquo;t required to. On the
+other hand, by calling <code>weapons[index]</code>, this code throws you right back into
+the mindset of <code>for (var i:int = 0; i &lt; foo.length; i++)</code>&hellip; exactly the sort of
+loop drudgery we want to escape. Why should we waste our time telling the
+computer <em>how</em> to loop over a set of items? Why should we have to tell the
+computer what <em>numbers</em> to plug into an array to get values out? With <code>_.zip</code>,
+we just say &ldquo;transform the data in a way that&rsquo;s easy to think about.&rdquo;</p>
+<p>Naturally, we won&rsquo;t stop there. With our <code>unique</code> function, and our squad
+builders, we saw that we can build a closure which holds a running set of data.
+With mapping functions, we can do considerably more.</p>
+<pre><code>/* figure 14 */
+/**
+ * Map builder: matches enemy difficulty to the player characters,
+ * and makes sure enemy party has at least one of each type.
+ */
+function balance(party:Party):Function {
+  var targetCombinedLevel:int = party.combinedLevel + 5;
+  var targetAverageLevel:int = 0;
+
+  var types:Array = [&quot;grenadier&quot;, &quot;soldier&quot;, &quot;sniper&quot;, &quot;scout&quot;];
+
+  // this time we're using all the arguments
+  return function(alien:Alien, i:int, a:Array):Alien {
+    // set target average level once we know the array length
+    targetAverageLevel ||= Math.round(targetCombinedLevel / a.length);
+
+    alien.level = targetAverageLevel;
+
+    // change the alien type until all required types are used
+    if (types.length &gt; 0) {
+      alien.type = types.pop();
+    }
+
+    return alien;
+  };
+}
+</code></pre><p>Here we have a function which transforms an entire list of enemies to match an
+in-game requirement. The possibilities don&rsquo;t stop there: we could use an inner
+mapping function to convert player classes to enemy types, ensuring that each
+player character is confronted with an appropriate counterattack. Or we could
+add a mapping which places the aliens in a formation based on the input type, by
+altering their <code>x</code> and <code>y</code> values: <code>.map(toFormation(&quot;phalanx&quot;))</code> or something.</p>
+<h2 id="next-up-function-mutation">
+  Next Up: Function Mutation
+  <a class="anchor" href="#next-up-function-mutation">#</a>
+</h2>
+<p>In the next post, I&rsquo;ll switch gears and talk about how to modify or even replace
+the behavior of functions at runtime. This opens up the ability to add
+application functionality on the fly, or just to simplify your code by doing a
+whole lot with just a few lines.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#closures-in-list-transformation">Closures in List Transformation</a>
+      <ul>
+        <li><a href="#basic-list-filtering">Basic List Filtering</a></li>
+        <li><a href="#smart-filters">Smart Filters</a></li>
+        <li><a href="#smarter-filters">Smarter Filters</a></li>
+        <li><a href="#filter-creator-creators">Filter Creator Creators</a></li>
+        <li><a href="#list-transformation">List Transformation</a></li>
+        <li><a href="#smart-maps-and-smarter-maps">Smart Maps and Smarter Maps</a></li>
+        <li><a href="#next-up-function-mutation">Next Up: Function Mutation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

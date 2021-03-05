@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.79.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive Debugging with Pry #  This article was written in summer 2012, and the topic is not evergreen. I stand by the core recommendations! Use Pry, use its debugging plugins. But the links and exact details may have shifted over time.  I wrote a post about pry earlier, but at the time, I didn&rsquo;t realize just how much muscle Pry was packing. Install two simple plugins and one builtin function, and you turn Pry into a stepping debugger.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Interactive Debugging with Pry" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/" />
+
+<title>Interactive Debugging with Pry | Alan MacDougall</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/index.xml" title="Alan MacDougall" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Alan MacDougall</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/professional-work/" class="">Professional Work</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle" checked />
+    <label for="section-2074b91aa0ad5b9c95e9ba3de764e002" class="flex justify-between">
+      <a href="https://alanmacdougall.com/technical-writing/" class="">Technical Writing</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/how-we-added-time-travel-to-paperless-post/" class="">How We Added Time Travel to Paperless Post</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/" class="">Introducing underscore.as</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/" class="">Anonymous Functions in AS3</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/" class="">Understanding Closures and Context</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/" class="">Closures in List Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/" class="">Function Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2013-02-03-refactoring-to-events/" class="">Refactoring to Events</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/" class="">Using vim-slime with pry for REPL perfection</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/" class=" active">Interactive Debugging with Pry</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class="">Quick Block Uncommenting</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/side-projects/" class="">Side Projects</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/resume/" class="">Resume</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/amacdougall" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Interactive Debugging with Pry</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#interactive-debugging-with-pry">Interactive Debugging with Pry</a>
+      <ul>
+        <li><a href="#time-stop">Time Stop</a></li>
+        <li><a href="#one-step-at-a-time">One Step at a Time</a></li>
+        <li><a href="#elevator-action">Elevator Action</a></li>
+        <li><a href="#further-reading">Further Reading</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="interactive-debugging-with-pry">
+  Interactive Debugging with Pry
+  <a class="anchor" href="#interactive-debugging-with-pry">#</a>
+</h1>
+<blockquote class="book-hint info">
+  This article was written in summer 2012, and the topic is not evergreen. I stand
+by the core recommendations! Use Pry, use its debugging plugins. But the links
+and exact details may have shifted over time.
+</blockquote>
+
+<p>I wrote a <a href="/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection.md">post about pry earlier</a>,
+but at the time, I didn&rsquo;t realize just how much muscle Pry was packing. Install
+two simple plugins and one builtin function, and you turn Pry into a stepping
+debugger. It can pause at a breakpoint, step through code one line at a time,
+and even shuttle up and down the call stack; and since you never lose your Pry
+superpowers, you can rummage around your state to your heart&rsquo;s content.</p>
+<h2 id="time-stop">
+  Time Stop
+  <a class="anchor" href="#time-stop">#</a>
+</h2>
+<p><code>binding.pry</code>. Two simple words with immense power. Speak them aloud, and your
+program will pause in place, frozen in time, while the Pry REPL springs up
+around it. Here&rsquo;s an example, from <a href="https://github.com/amacdougall/puppy-presenter">the single most important project on Github</a>,
+an experimental puppy display grid.</p>
+<pre><code># generate HTML from template
+template = File.read config[&quot;files&quot;][&quot;template&quot;]
+
+binding.pry # ENTER THE MATRIX
+
+engine = Haml::Engine.new template, :format =&gt; :html5;
+output = engine.render Object.new, :images =&gt; images;
+</code></pre><p>This scrap of script crams cute puppies into a HAML template, but first,
+<code>binding.pry</code> freezes reality. Loops stop looping, events stop listening, and
+the world halts in an eyeblink. Except for you. You have total freedom: you can
+peek at your code and tinker with its innards at will. To resume, <code>Ctrl-D</code>; your
+code will roar back to life and keep going until it hits another <code>binding.pry</code>.</p>
+<p>If you run your local Rails instance with <code>rails server</code> or <code>./script/server</code>,
+you can even drop into a Pry session right in your terminal, using the same
+<code>binding.pry</code> technique. Rails debug spam stops: Pry starts.</p>
+<h2 id="one-step-at-a-time">
+  One Step at a Time
+  <a class="anchor" href="#one-step-at-a-time">#</a>
+</h2>
+<p>The <code>pry-nav</code> plugin makes it easy to execute your code one step at a time. When
+your code hits the brick wall of <code>binding.py</code>, you can walk it forward, line by
+line, with <code>next</code> &ndash; or if you&rsquo;re not feeling so talkative, <a href="https://github.com/nixme/pry-nav#pry-nav">alias it to &lsquo;n&rsquo;</a>
+in <code>.pryrc</code>.</p>
+<p>We pause at <code>binding.pry</code>; now we can step forward. There will be a little arrow
+showing us what line we&rsquo;re on. We can execute any code we want at the command
+line; we&rsquo;ll get our output and then skim a little off the top.</p>
+<p><code>gem install pry-nav</code> or add it to your <code>Gemfile</code> to acquire it; <code>require 'pry-nav'</code> to equip it.</p>
+<h2 id="elevator-action">
+  Elevator Action
+  <a class="anchor" href="#elevator-action">#</a>
+</h2>
+<p>The <code>pry-stack_explorer</code> gem lets you move up and down the call stack. Can&rsquo;t
+debug much of anything without that. These two methods make a nice easy target.
+They don&rsquo;t do much of anything, so there&rsquo;s nothing to debug, but they&rsquo;re simple,
+so debugging is easy. Life should be more like that.</p>
+<pre><code>require 'pry'
+require 'pry-nav'
+require 'pry-stack_explorer'
+
+def outer(message, number)
+  inner(message)
+end
+
+def inner(message)
+  local = true
+  binding.pry
+end
+
+outer(&quot;hello&quot;, 1000)
+</code></pre><p>Plain old Pry lets you look at your locals when <code>binding.pry</code> sets its teeth.
+Try to look at something outside the current scope, though, and Ruby stonewalls
+you, but <code>pry-stack_explorer</code> doesn&rsquo;t care much for walls. Just use <code>up</code> and
+<code>down</code> to traverse the stack.</p>
+<p>Your program hasn&rsquo;t moved&hellip; just your point of view. <code>show-stack</code> shows you the
+whole call stack, with a little arrow saying <em>you are here</em>.</p>
+<h2 id="further-reading">
+  Further Reading
+  <a class="anchor" href="#further-reading">#</a>
+</h2>
+<p>In <a href="http://banisterfiend.wordpress.com/2012/02/14/the-pry-ecosystem/">this post by Pry&rsquo;s author</a>,
+you can read more about <code>pry-nav</code>, <code>pry-stack_explorer</code>, and other plugins that
+might help you out.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#interactive-debugging-with-pry">Interactive Debugging with Pry</a>
+      <ul>
+        <li><a href="#time-stop">Time Stop</a></li>
+        <li><a href="#one-step-at-a-time">One Step at a Time</a></li>
+        <li><a href="#elevator-action">Elevator Action</a></li>
+        <li><a href="#further-reading">Further Reading</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.79.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Function Transformation #  Modern JavaScript is firmly on the side of magic. Why write a hundred-line set of meticulous loops when you can write a ten-line filter chain? Why invoke a factory object dozens of times when you can write a map function? And if you want your application&rsquo;s behavior to change from moment to moment, why use explicit states, or a Strategy pattern, or reference a global flag, when you can just swap out the functions themselves?">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Function Transformation" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/" />
+
+<title>Function Transformation | Alan MacDougall</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/index.xml" title="Alan MacDougall" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Alan MacDougall</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/professional-work/" class="">Professional Work</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle" checked />
+    <label for="section-2074b91aa0ad5b9c95e9ba3de764e002" class="flex justify-between">
+      <a href="https://alanmacdougall.com/technical-writing/" class="">Technical Writing</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/how-we-added-time-travel-to-paperless-post/" class="">How We Added Time Travel to Paperless Post</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/" class="">Introducing underscore.as</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/" class="">Anonymous Functions in AS3</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/" class="">Understanding Closures and Context</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/" class="">Closures in List Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/" class=" active">Function Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2013-02-03-refactoring-to-events/" class="">Refactoring to Events</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/" class="">Using vim-slime with pry for REPL perfection</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/" class="">Interactive Debugging with Pry</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class="">Quick Block Uncommenting</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/side-projects/" class="">Side Projects</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/resume/" class="">Resume</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/amacdougall" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Function Transformation</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#function-transformation">Function Transformation</a>
+      <ul>
+        <li><a href="#laborious-authentication">Laborious Authentication</a></li>
+        <li><a href="#sorcerous-authentication">Sorcerous Authentication</a></li>
+        <li><a href="#tinker-toys">Tinker Toys</a>
+          <ul>
+            <li><a href="#a-side-note-functionapply">A side note: Function.apply</a></li>
+          </ul>
+        </li>
+        <li><a href="#real-world-closures">Real-World Closures</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="function-transformation">
+  Function Transformation
+  <a class="anchor" href="#function-transformation">#</a>
+</h1>
+<p>Modern JavaScript is firmly on the side of magic. Why write a hundred-line set
+of meticulous loops when you can write a ten-line filter chain? Why invoke a
+factory object dozens of times when you can write a map function? And if you
+want your application&rsquo;s behavior to change from moment to moment, why use
+explicit states, or a Strategy pattern, or reference a global flag, when you can
+just swap out the functions themselves?</p>
+<p>And why swap functions yourself? Let the functions do that for you. Wind them
+up. Let them run.</p>
+<p>(From here on, I&rsquo;ll be using JavaScript instead of ActionScript in my examples,
+but the concepts are 100% identical. If you use
+<a href="http://www.github.com/amacdougall/underscore.as/">underscore.as</a>, you can use
+very similar code in ActionScript 3. <a href="http://jquery.com">jQuery</a> needs no
+introduction.)</p>
+<blockquote class="book-hint info">
+  This article was written in spring 2012, but every word still holds true, and
+it applies to JavaScript with very minimal mental translation.
+</blockquote>
+
+<h2 id="laborious-authentication">
+  Laborious Authentication
+  <a class="anchor" href="#laborious-authentication">#</a>
+</h2>
+<p>You&rsquo;ve seen code like this a million times &ndash; and in my opinion, that&rsquo;s 999,999
+times too many.</p>
+<p>HTML:</p>
+<pre><code>&lt;div class=&quot;blogExample&quot; id=&quot;example_01&quot;&gt;
+  &lt;h1&gt;Imaginary Blog Post&lt;/h1&gt;
+  &lt;p&gt;Here is the content of the blog post.&lt;/p&gt;
+  &lt;h1 class=&quot;addComment&quot;&gt;&lt;a href=&quot;#&quot;&gt;Add Comment&lt;/a&gt;&lt;/h1&gt;
+  &lt;div class=&quot;commentForm hidden&quot;&gt;
+    &lt;p&gt;(Normal comment submission form.)&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;loginForm hidden&quot;&gt;
+    &lt;p&gt;(Login form: username, password.)&lt;/p&gt;
+    &lt;p&gt;&lt;button&gt;Submit&lt;/button&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt; 
+</code></pre><p>JavaScript:</p>
+<pre><code>// wrapped in an instantly-executing function to avoid variable spillover
+(function() {
+  $(document).ready(function() {
+    var authenticated = false;
+
+    var $content = $(&quot;#example_01&quot;);
+    var $commentForm = $content.find(&quot;div.commentForm&quot;);
+    var $loginForm = $content.find(&quot;div.loginForm&quot;);
+
+    function addComment() {
+      if (authenticated) {
+        $commentForm.show();
+        $loginForm.hide();
+      } else {
+        $loginForm.show();
+      }
+    }
+
+    $content.find(&quot;h1.addComment a&quot;).click(function (event) {
+      event.preventDefault();
+      addComment();
+    });
+
+    $loginForm.find(&quot;button&quot;).click(function(event) {
+      event.preventDefault();
+      $(this).parent().html(&quot;logging in...&quot;);
+      // adding a delay to simulate a success callback
+      var successHandler = function() {
+        authenticated = true;
+        addComment();
+      };
+
+      _(successHandler).delay(1000);
+    });
+  });
+})();
+</code></pre><p>This code is pretty straightforward. First we locate DOM elements using jQuery,
+using the leading <code>$</code> to indicate that they should only hold jQuery-wrapped
+elements. Hungarian notation? Guilty, but at least it&rsquo;s
+<a href="http://www.joelonsoftware.com/articles/Wrong.html">the good kind</a>.
+Our DOM objects located, we define <code>addComment</code> to show the comment form if
+possible, and the login form if necessary; and finally, we arrange for the login
+form to call <code>addComment</code> again on a successful login.</p>
+<p>If you have only one action on your site which requires a login, this kind of
+structure is perfectly reasonable. Once you have two, however, you find yourself
+copying your login form everywhere, and giving it a different success handler
+each time, so it can resume a different user action. You can generate the login
+form by cloning a hidden DOM element, but a more insidious problem remains: your
+<code>addComment</code> function has to understand the <em>concept</em> of authentication. Any
+other function that requires authentication <em>also</em> has to understand the
+concept. You will be writing <code>if (authenticated)</code> until the day you die or your
+app becomes obsolete—whichever comes first.</p>
+<p>(Remember, it&rsquo;s bad when people never use your app. It&rsquo;s terrible when they never
+stop. Written any good IE6 workarounds lately?)</p>
+<h2 id="sorcerous-authentication">
+  Sorcerous Authentication
+  <a class="anchor" href="#sorcerous-authentication">#</a>
+</h2>
+<p>How do we take authentication out of our functions and put it all in one place?
+Short answer: <em>sorcery</em>. If you&rsquo;ve been paying attention to my constant campaign
+for passing functions as values, you might immediately think of something like
+this:</p>
+<pre><code>function addComment() {
+  if (authenticated) {
+    // show comment form
+  } else {
+    authenticate(addComment);
+  }
+}
+
+// And then somewhere else...
+/** Execute the supplied callback after user is authenticated. */
+function authenticate(callback) {
+  if (authenticated) {
+    callback();
+  } else {
+    loginForm.show();
+    loginForm.bind(&quot;success&quot;, callback);
+  }
+}
+</code></pre><p>And this is definitely much closer to something I&rsquo;d want to use. All our login
+handling code moves to a separate function, <code>authenticate</code>, which is not
+connected to commenting at all. <code>authenticate</code> can do its work and then execute
+the callback to resume the workflow. But your <code>addComment</code> function still
+includes the knowledge that the user must be authenticated. Imagine that in some
+contexts, you allow anonymous comments, but in others, you don&rsquo;t: now you have
+to write two functions (bad), or include logic in the function to decide whether
+a login is required (far worse).</p>
+<p>Instead, let&rsquo;s put the authentication requirement where it&rsquo;s most relevant: in
+the code which defines the behavior of the page itself. <code>addComment</code> can remain
+pleasantly generic, while this specific button prompts anonymous users for their
+credentials.</p>
+<pre><code>(function() {
+  $(document).ready(function() {
+    var authenticated = false;
+
+    var $content = $(&quot;#example_02&quot;);
+    var $commentForm = $content.find(&quot;div.commentForm&quot;);
+    var $loginForm = $content.find(&quot;div.loginForm&quot;);
+
+    function addComment() {
+      $commentForm.show();
+    }
+
+    function requireLogin(callback) {
+      return function(event) {
+        event.preventDefault();
+        if (authenticated) {
+          callback();
+        } else {
+          // on login success, execute and remove callback
+          $loginForm.one(&quot;success&quot;, function() {
+            $loginForm.hide();
+            callback();
+          });
+          $loginForm.show();
+        }
+      }
+    }
+
+    // set up $loginForm events
+    $loginForm.find(&quot;a&quot;).click(function(event) {
+      event.preventDefault();
+
+      // simulate successful login after talking to server
+      $(this).parent().html(&quot;logging in...&quot;);
+      _(function() {
+        authenticated = true;
+        $loginForm.trigger(&quot;success&quot;);
+      }).delay(1000);
+    });
+
+    $content.find(&quot;h1.addComment a&quot;).click(requireLogin(addComment));
+  });
+})();
+</code></pre><p>The magical line here is <code>foo.click(requireLogin(addComment));</code>. <code>requireLogin</code>
+creates a function which displays the login form if necessary, and handles its
+<code>success</code> event by executing <code>addComment</code>. If no login is necessary, the
+function returned from <code>requireLogin</code> calls <code>addComment</code> immediately. In other
+words, the anonymous function which handles the login is <em>wrapped around</em> the
+function which handles comments; so this type of function is called a &ldquo;wrapper.&rdquo;
+You could also say that the login functionality is a &ldquo;decoration&rdquo; which can be
+applied to any function; so a function like <code>requireLogin</code> is called a
+&ldquo;<a href="http://en.wikipedia.org/wiki/Decorator_pattern">decorator</a>.&rdquo;</p>
+<p>In a more general sense, <code>addComment</code> goes in, and what comes back is something
+that can be used exactly the same way&hellip; but which has extra powers.
+<code>requireLogin</code> is the gamma-ray chamber. <code>addComment</code> is Bruce Banner. We just
+took a function and <em>changed it</em>, while still using it in the same code. If you
+know object-oriented programming, the concept
+<a href="http://en.wikipedia.org/wiki/Polymorphism_%5c%28computer_science%5c%29">may sound familiar</a>.
+Polymorphism: it&rsquo;s not just for subclasses anymore!</p>
+<h2 id="tinker-toys">
+  Tinker Toys
+  <a class="anchor" href="#tinker-toys">#</a>
+</h2>
+<p>That example showed how to prevent the default functionality until a condition
+is met, but we can also use decorators to augment a method—to make it do
+more than it did before. Our weapon is <code>_.compose</code>, an underscore.js method
+which transforms a list of functions into a single one which combines all the
+functions into a single pipeline.</p>
+<p>For a simple example of composition:</p>
+<pre><code>function foo(message) {
+  return &quot;foo&quot; + (message || &quot;&quot;);
+}
+
+function bar(message) {
+  return &quot;bar&quot; + (message || &quot;&quot;);
+}
+
+function baz(message) {
+  return &quot;baz&quot; + (message || &quot;&quot;);
+}
+
+var composed = _.compose(foo, bar, baz);
+composed(); // returns &quot;foobarbaz&quot;
+</code></pre><p>In this example, <code>composed</code> is a function which runs <code>baz</code>, then <code>bar</code>, then
+<code>foo</code>, passing the output of each function as input to the next. The output of
+<code>baz</code> is &ldquo;baz&rdquo;; <code>bar</code> places &ldquo;bar&rdquo; in front of it to make &ldquo;barbaz&rdquo;; and so on.
+<code>(message || &quot;&quot;)</code> returns the empty string if <code>message</code> is null or false. We&rsquo;re
+accustomed to reading from left to right, so this may feel strange, but once
+you&rsquo;re accustomed to it, <code>_.compose</code> is a powerful tool. Here&rsquo;s a more practical
+example: the &ldquo;insert&rdquo; and &ldquo;delete&rdquo; buttons add blocks of random text, while
+&ldquo;bold&rdquo; and &ldquo;italic&rdquo; act as modifiers.</p>
+<p>HTML:</p>
+<pre><code>&lt;div class=&quot;controls&quot;&gt;
+  &lt;div class=&quot;controlBlock&quot;&gt;
+    &lt;button class=&quot;insert&quot;&gt;Insert&lt;/button&gt;
+    &lt;button class=&quot;delete&quot;&gt;Delete&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;controlBlock&quot;&gt;
+    &lt;button decorator=&quot;makeBold&quot;&gt;Bold&lt;/button&gt;
+    &lt;button decorator=&quot;makeItalic&quot;&gt;Italic&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Click &lt;i&gt;insert&lt;/i&gt; and &lt;i&gt;delete&lt;/i&gt; to add and remove elements.&lt;/p&gt;
+&lt;div class=&quot;itemList&quot;&gt;&lt;/div&gt;
+</code></pre><p>And the much more interesting JavaScript:</p>
+<pre><code>(function() {
+  $(document).ready(function() {
+    // find and jQuerify all needed DOM elements
+    var $content = $(&quot;#example_03&quot;);
+    var $itemList = $content.find(&quot;div.itemList&quot;);
+    var $insertButton = $content.find(&quot;div.controls button.insert&quot;);
+    var $deleteButton = $content.find(&quot;div.controls button.delete&quot;);
+
+    var dummyText = [
+      &quot;Ant&quot;,
+      &quot;Bumblebee&quot;,
+      &quot;Butterfly&quot;,
+      &quot;Cricket&quot;,
+      &quot;Dragonfly&quot;,
+      &quot;Grasshopper&quot;,
+      &quot;Ladybug&quot;
+    ];
+
+    /** The function to be used to add example elements. */
+    var buildElement = buildRandomText;
+    /** Decorator functions used to add styles. */
+    var currentDecorators = [];
+
+    function buildRandomText() {
+      var randomText = dummyText[Math.floor(dummyText.length * Math.random())];
+      return $(&quot;&lt;p&gt;&quot; + randomText + &quot;&lt;/p&gt;&quot;);
+    }
+
+    var decorators = {
+      makeItalic: function($element) {
+        return $element.addClass(&quot;italic&quot;);
+      },
+
+      makeBold: function($element) {
+        return $element.addClass(&quot;bold&quot;);
+      }
+    };
+
+    $insertButton.click(function(event) {
+      $itemList.append(buildElement());
+    });
+
+    $deleteButton.click(function(event) {
+      $itemList.children().last().remove();
+    });
+
+    $content.find(&quot;button[decorator]&quot;).click(function() {
+      $(this).toggleClass(&quot;selected&quot;);
+      toggleDecorator(decorators[$(this).attr(&quot;decorator&quot;)]);
+    });
+
+    /**
+     * Toggles presence of the supplied function in the decorators array, then
+     * regenerates the buildElement function.
+     */
+    function toggleDecorator(f) {
+      currentDecorators = _(currentDecorators).include(f) ?
+        _(currentDecorators).without(f) :
+        currentDecorators.concat(f);
+
+      buildElement = _.compose.apply(null, currentDecorators.concat(buildRandomText));
+    }
+  });
+})();
+</code></pre><p>The easiest way to understand this example is to focus on the <code>buildElement</code>
+function; or rather, the function which is assigned to the <code>buildElement</code>
+variable. At first, we assign it <code>buildRandomText</code>; but clicking the &ldquo;bold&rdquo; or
+&ldquo;italic&rdquo; buttons alters that assignment. Click &ldquo;bold&rdquo;, and the <code>makeBold</code>
+function is added to the <code>currentDecorators</code> array. Click again, and the
+function is removed. The underscore.js method <code>_.without</code> makes it easy to
+remove a known value from an array; and the mapping between HTML attributes and
+method names in a namespace may be brittle, but it&rsquo;s also extremely convenient.
+Pick your poison. And once <code>currentDecorators</code> has some content, <code>_.compose</code>
+comes into play.</p>
+<p>If &ldquo;bold&rdquo; is selected and &ldquo;italic&rdquo; is not, <code>currentDecorators</code> only contains <code>makeBold</code>.
+Let us revisit the definition of that function:</p>
+<pre><code>// it's defined a bit differently in the example,
+// but the effect is identical
+function makeBold($element) {
+  return $element.addClass(&quot;bold&quot;);
+}
+</code></pre><p>The function accepts a jQuery element, and returns it after adding the &ldquo;bold&rdquo;
+class. Simple as that; but more complicated decorators are easy to imagine. In
+this case, the decorator is earning its name: it literally applies decorations
+to a UI element. An element goes in; an element which <em>should</em> have the same use
+case comes out. Remember, decorated functions are meant to be drop-in
+replacements for their originals.</p>
+<p><code>_.compose(makeBold, buildRandomText)</code> creates and returns a function which
+could otherwise be expressed as <code>makeBold(buildRandomText())</code>&hellip; and now perhaps
+you see why the arguments to <code>_.compose</code> are written left to right. Add italic,
+and you&rsquo;ll get a function which has the same effect as
+<code>makeItalic(makeBold(buildRandomText()))</code>. The rightmost function just has to
+return a value; each other function has to accept the value returned from the
+next one.</p>
+<h3 id="a-side-note-functionapply">
+  A side note: Function.apply
+  <a class="anchor" href="#a-side-note-functionapply">#</a>
+</h3>
+<p>Sadly, <code>_.compose</code> takes variable arguments, not an array of methods, so we have
+to use <code>Function.apply</code> before it will operate on our <code>currentDecorators</code> array.
+Functions are objects; they can have methods. <code>Function.apply</code> executes the
+function within a given context (<code>null</code> is sufficient here), and passes it each
+array element as an argument. To put it another way, any function you can call
+like this:</p>
+<pre><code>myFunction(alpha, beta, gamma);
+</code></pre><p>&hellip;can also be called like this:</p>
+<pre><code>myFunction.apply(null, [alpha, beta, gamma]);
+</code></pre><p>Have you ever written a loop to find the largest number in an array? From now
+on, use <code>Math.max.apply(null, values)</code>. Who&rsquo;s the coolest kid on the block?
+Read <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/apply">Mozilla Developer Network&rsquo;s excellent documentation</a>
+for a bit more detail.</p>
+<h2 id="real-world-closures">
+  Real-World Closures
+  <a class="anchor" href="#real-world-closures">#</a>
+</h2>
+<p>I know you&rsquo;re champing at the bit to go write code with like a zillion closures,
+but you know deep in your heart that it&rsquo;s all just showboating. You don&rsquo;t have
+to use this stuff to get real work done, right? And if you do, it won&rsquo;t save you
+much time over just writing some loops and storing some variables in a plain and
+simple data structure. You may be right! But that didn&rsquo;t stop us at
+<a href="http://www.paperlesspost.com">Paperless Post</a> from using closures as part of
+our upcoming undo/redo system.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#function-transformation">Function Transformation</a>
+      <ul>
+        <li><a href="#laborious-authentication">Laborious Authentication</a></li>
+        <li><a href="#sorcerous-authentication">Sorcerous Authentication</a></li>
+        <li><a href="#tinker-toys">Tinker Toys</a>
+          <ul>
+            <li><a href="#a-side-note-functionapply">A side note: Function.apply</a></li>
+          </ul>
+        </li>
+        <li><a href="#real-world-closures">Real-World Closures</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

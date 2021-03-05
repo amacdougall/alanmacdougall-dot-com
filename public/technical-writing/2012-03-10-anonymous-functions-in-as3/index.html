@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta name="generator" content="Hugo 0.79.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Anonymous Functions in AS3 #  In ActionScript, functions are objects which can be stored in variables and passed as arguments, just like any other value. Since functions are treated just like any other object—like &ldquo;first-class citizens,&rdquo; if you will—AS3 is said to have &ldquo;first-class functions.&rdquo; This lets us do stuff that would be cumbersome in other languages, but it also throws a whole new set of potholes in our path.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Anonymous Functions in AS3" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/" />
+
+<title>Anonymous Functions in AS3 | Alan MacDougall</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.0f40b4e83b0db00d11c595295e7f5f85f51436d20a5b6790534cb30c9f46a201.css" integrity="sha256-D0C06DsNsA0RxZUpXn9fhfUUNtIKW2eQU0yzDJ9GogE="><link rel="alternate" type="application/rss+xml" href="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/index.xml" title="Alan MacDougall" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Alan MacDougall</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/professional-work/" class="">Professional Work</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2074b91aa0ad5b9c95e9ba3de764e002" class="toggle" checked />
+    <label for="section-2074b91aa0ad5b9c95e9ba3de764e002" class="flex justify-between">
+      <a href="https://alanmacdougall.com/technical-writing/" class="">Technical Writing</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/how-we-added-time-travel-to-paperless-post/" class="">How We Added Time Travel to Paperless Post</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-09-introducing-underscore-dot-as/" class="">Introducing underscore.as</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-anonymous-functions-in-as3/" class=" active">Anonymous Functions in AS3</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-understanding-closures-and-context/" class="">Understanding Closures and Context</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-10-closures-in-list-transformation/" class="">Closures in List Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-11-function-transformation/" class="">Function Transformation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2013-02-03-refactoring-to-events/" class="">Refactoring to Events</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-03-27-using-vim-slime-with-pry-for-repl-perfection/" class="">Using vim-slime with pry for REPL perfection</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-06-08-interactive-debugging-with-pry/" class="">Interactive Debugging with Pry</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/technical-writing/2012-05-29-quick-block-uncommenting/" class="">Quick Block Uncommenting</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/side-projects/" class="">Side Projects</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://alanmacdougall.com/resume/" class="">Resume</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/amacdougall" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Anonymous Functions in AS3</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#anonymous-functions-in-as3">Anonymous Functions in AS3</a>
+      <ul>
+        <li><a href="#anonymous-functions">Anonymous Functions</a></li>
+        <li><a href="#normal-event-listeners">Normal Event Listeners</a></li>
+        <li><a href="#state-based-event-listeners">State-based Event Listeners</a></li>
+        <li><a href="#anonymous-functions-and-this">Anonymous functions and <code>this</code></a></li>
+        <li><a href="#user-input-interpretation">User input interpretation</a></li>
+        <li><a href="#array-filtering">Array filtering</a></li>
+        <li><a href="#functions-with-superpowers">Functions with superpowers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="anonymous-functions-in-as3">
+  Anonymous Functions in AS3
+  <a class="anchor" href="#anonymous-functions-in-as3">#</a>
+</h1>
+<p>In ActionScript, functions are objects which can be stored in variables and
+passed as arguments, just like any other value. Since functions are treated just
+like any other object—like &ldquo;first-class citizens,&rdquo; if you will—AS3
+is said to have &ldquo;first-class functions.&rdquo; This lets us do stuff that would be
+cumbersome in other languages, but it also throws a whole new set of potholes in
+our path. This post shows how to use first-class functions for state-based event
+handling, user input interpretation, and array filtering, but I&rsquo;ll begin with
+something you&rsquo;ve seen a million times before: the lowly event listener.</p>
+<blockquote class="book-hint info">
+  This article was written in spring 2012, but every word still holds true, and
+it applies to JavaScript with very minimal mental translation.
+</blockquote>
+
+<h2 id="anonymous-functions">
+  Anonymous Functions
+  <a class="anchor" href="#anonymous-functions">#</a>
+</h2>
+<p>This syntax appears constantly in ActionScript:</p>
+<pre><code>/* figure 01 */
+function handleChange(event:Event):void {
+  doStuff();
+}
+
+thing.addEventListener(Event.CHANGE, handleChange);
+
+// which is equivalent to this:
+thing.addEventListener(Event.CHANGE, function(event:Event):void {
+  doStuff();
+});
+</code></pre><p>Both syntaxes have the same effect: they create a function and register it to be
+executed whenever the <code>thing</code> object fires a <code>CHANGE</code> event. In the first
+example, the function gets a name; in the second, it has no name: it is
+&ldquo;anonymous.&rdquo; Here is an anonymous function:</p>
+<pre><code>/* figure 02 */
+var alpha:Function = function():void {trace(&quot;alpha&quot;);};
+alpha(); // traces &quot;alpha&quot;
+var beta:Function = alpha;
+beta(); // traces &quot;alpha&quot;, since it's the exact same function
+</code></pre><p>The value assigned to <code>alpha</code> is a &ldquo;function literal&rdquo;. Just like a string
+literal is converted to a String object at runtime, and a regex literal is
+converted to a <code>RegExp</code>, a function literal is converted to a <code>Function</code>. It&rsquo;s
+an instance of the <code>Function</code> class. You must understand that the <code>function</code>
+keyword in AS3 is almost identical to just assigning a anonymous function to a
+variable.</p>
+<pre><code>/* figure 03 */
+// has the same effect as the code in figure 02
+function alpha():void {
+  trace(&quot;alpha&quot;)
+}
+alpha();
+var beta:Function = alpha;
+beta();
+</code></pre><p>There are two subtle differences between functions defined using the <code>function</code>
+keyword and functions which are stored in variables, arrays, or objects. One
+concerns the behavior of the <code>this</code> keyword, and will be explained later. The
+other is that variables defined using <code>function</code> are &ldquo;hoisted&rdquo; to the top of the
+script, and interpreted first, so that they are available to all code in the
+same scope. Anonymous functions follow the same rules as any other object: you
+have to define them before you can use them.</p>
+<p>From this point on, any function which is <em>not</em> defined using the <code>function</code>
+keyword, whether it is assigned to a variable or not, will be referred to as an
+&ldquo;anonymous function.&rdquo;</p>
+<h2 id="normal-event-listeners">
+  Normal Event Listeners
+  <a class="anchor" href="#normal-event-listeners">#</a>
+</h2>
+<p>Armed with this knowledge, you can guess how <code>EventDispatcher.addEventListener</code>
+works. Given an event type and a function, it adds the function to an array of
+functions to be called whenever an event of that type occurs. In fact, here&rsquo;s a
+naive implementation:</p>
+<pre><code>/* figure 03 */
+public class EventDispatcher {
+  private var listeners:Object = {};
+
+  /**
+   * Registers the handler to be executed when an event of the supplied
+   * type occurs.
+   */
+  public function addEventListener(type:String, handler:Function):void {
+    listeners[type] ||= [];
+    listeners[type].push(handler);
+  }
+  
+  /**
+   * Signals that an event of the supplied type has occurred. Calls
+   * all handlers, passing each one the event as an argument.
+   */
+  public function dispatchEvent(event:Event):void {
+    for each (var handler:Function in listeners[type]) {
+      // though we passed it around as a value, it's still
+      // a function... and we can call it as one with &quot;()&quot;.
+      handler(event);
+    }
+  }
+}
+</code></pre><p>In the for-each loop, we have a variable named <code>handler</code>, which is assigned an
+anonymous function as its value. As long as the value of a variable is an
+instance of <code>Function</code>, we can invoke it with &ldquo;()&rdquo;, just like any other
+function.</p>
+<p>This simple example doesn&rsquo;t prevent duplicate handlers, and has no way of
+removing handlers, but it&rsquo;s a general outline of what Flash Player is doing
+under the hood; and it would be impossible without anonymous functions.</p>
+<h2 id="state-based-event-listeners">
+  State-based Event Listeners
+  <a class="anchor" href="#state-based-event-listeners">#</a>
+</h2>
+<p>You might already have implemented input states by using switch statements, sort
+of like this:</p>
+<pre><code>/* figure 04 */
+private function handleClick(event:MouseEvent):void {
+  switch (state) {
+    case INPUT:
+      // behavior of click event while in input state
+      break;
+    case LOADING:
+      // behavior of click event while in loading state
+      break;
+    case VIEW:
+      // behavior of click event while in view state
+      break;
+  }
+}
+
+private function handleClick(event:MouseEvent):void {
+  switch (state) {
+    case INPUT:
+      // behavior of move event while in input state
+      break;
+    case LOADING:
+      // behavior of move event while in loading state
+      break;
+    case VIEW:
+      // behavior of move event while in view state
+      break;
+  }
+}
+</code></pre><p>But in this approach, you have three possible behaviors defined for each event
+handler, resulting in code clutter: if you&rsquo;re only interested in the view state,
+you have to skip past the other states to find it. A different approach is to
+change your event handlers only once when the state changes; and although you
+could define functions with names like <code>readyStateClickHandler</code>, it&rsquo;s
+more flexible to map event handlers to state constants. Here&rsquo;s an example:</p>
+<pre><code>/* figure 05 */
+public class InputHandler {
+  /* state constants */
+  public static const INPUT:String = &quot;input&quot;;
+  public static const LOADING:String = &quot;loading&quot;;
+  public static const VIEW:String = &quot;view&quot;;
+
+  /* stores current value of &quot;this&quot; */
+  private var self:InputHandler = this;
+
+  /* input handlers */
+  private var handlers:Object = {
+    input: {
+      click: function(event:MouseEvent):void {
+        // click handler for input state
+      },
+      move: function(event:MouseEvent):void {
+        // mouse move handler for input state
+      }
+    },
+    loading: {
+      click: function(event:MouseEvent):void {
+        // click handler for loading state
+      },
+      move: function(event:MouseEvent):void {
+        // mouse move handler for loading state
+      }
+    },
+    view: {
+      click: function(event:MouseEvent):void {
+        // click handler for view state
+      },
+      move: function(event:MouseEvent):void {
+        // mouse move handler for view state
+      }
+    }
+  };
+
+  private var _state:String = &quot;input&quot;;
+
+  public function get state():String {return _state;}
+  public function set state(value:String):void {
+    if (_state != value) {
+      // replace click handler
+      removeEventListener(MouseEvent.CLICK, handlers[state].click);
+      addEventListener(MouseEvent.CLICK, handlers[value].click);
+      _state = value;
+    }
+  }
+}
+</code></pre><p>In this system, we can define all our event handlers in the handlers object,
+grouped by state; it&rsquo;s easier to work on the behavior for one state at a time.
+Of course, for even more modularity, we could implement the classic
+<a href="http://en.wikipedia.org/wiki/State_pattern">State pattern</a>.</p>
+<h2 id="anonymous-functions-and-this">
+  Anonymous functions and <code>this</code>
+  <a class="anchor" href="#anonymous-functions-and-this">#</a>
+</h2>
+<p>You probably noticed a quirk: the <code>self</code> variable defined right before the input
+handlers. This is a workaround for one of the pitfalls of anonymous functions:
+functions which are <em>not</em> created with the <code>function</code> keyword do not have a
+single permanent <code>this</code> value. Instead, <code>this</code> is always equal to the context in
+which the function is called. An example:</p>
+<pre><code>/* figure 06 */
+public class Foo {
+  public var name:String = &quot;Foo&quot;;
+  public var sayName:Function = function():void {
+    trace(this.name);
+  }
+}
+
+public class Bar {
+  public var name:String = &quot;Bar&quot;;
+  public var sayName:Function = null;
+}
+
+var foo:Foo = new Foo();
+var bar:Bar = new Bar();
+bar.sayName = foo.sayName;
+
+/* At this point, bar.sayName is the exact same Function object as
+ * foo.sayName! But if we call it on each object in turn...
+ */
+foo.sayName(); // traces &quot;foo&quot;
+bar.sayName(); // traces &quot;bar&quot;
+</code></pre><p>Sometimes this is exactly the behavior you want! You might want to give an
+object new methods, and give those methods the ability to access their new
+&ldquo;host&rdquo; object—sort of like defining a class at runtime. In the example
+above, when we assign <code>foo</code>&rsquo;s <code>sayName</code> function to <code>bar</code>, <code>sayName</code> behaves as
+if it had been defined in the <code>Bar</code> class all along.</p>
+<p>But sometimes that behavior gets in your way. In fact, Adobe&rsquo;s documentation
+says not to use anonymous functions as event listeners at all—but that&rsquo;s a
+sad, dry, timid way to live. We can squeeze a lot of extra power out of
+anonymous functions as long as we know three things. First, the value of <code>this</code>
+can change; second, we can store the <em>current</em> value of <code>this</code> and use it later.
+Within all those event handlers, just use <code>self</code> where you would normally use
+<code>this</code>. I&rsquo;ll explain the underlying theory in the next post.</p>
+<p>The third thing? Who says you need to use <code>this</code> in event handlers in the first
+place? Just refer to instance variables as you normally would, and everything
+will work just fine.</p>
+<h2 id="user-input-interpretation">
+  User input interpretation
+  <a class="anchor" href="#user-input-interpretation">#</a>
+</h2>
+<p>Anonymous functions also come in handy when responding to user input. Imagine a
+multiplayer game with a chat window. In addition to chatting with other players,
+the user can type simple commands beginning with &ldquo;/&rdquo;, as in IRC. We want to
+provide abbreviations for advanced users, and allow permutations such as
+variable arguments. Here&rsquo;s an easy way to do it with regular expressions and
+anonymous functions:</p>
+<pre><code>/* figure 07 */
+public class Interpreter {
+  private var commands:Array = [
+      // e.g. &quot;/h&quot;, &quot;/help&quot;
+    {   pattern: /^\/h(elp)?$/,
+      command: function(input:String):void {
+        // display help text
+      }
+    },
+      // e.g. &quot;/w alan Hey, what's up?&quot;
+    {   pattern: /^\/w(hisper)? (\w+) (.+)$/,
+      command: function(input:String):void {
+        // find the target user
+        // send a whisper to the target user
+      }
+    }
+  ];
+
+  public function interpret(input:String):void {
+    for each (var mapping:Object in commands) {
+      if (input.match(mapping.pattern)) {
+        mapping.handler(input);
+        return;
+      }
+    }
+    // if no pattern matched, display an error message
+  }
+}
+</code></pre><p>This system makes it easy to define new input/handler pairs, and since the
+handlers are defined right after the patterns that invoke them, the code is
+simple to understand.</p>
+<h2 id="array-filtering">
+  Array filtering
+  <a class="anchor" href="#array-filtering">#</a>
+</h2>
+<p>AS3 provides built-in methods for array transformation using first-class
+functions: <code>filter</code> and <code>map</code>. Here&rsquo;s the usage of
+<code>filter</code>:</p>
+<pre><code>/* figure 08 */
+/** Filter function: returns true if n is a positive integer. */
+// AS3 requires filter functions to have all three arguments
+function isNaturalNumber(n:Number, i:int, a:Array):Boolean {
+  return n &gt;= 1 &amp;&amp; n % 1 == 0;
+}
+
+var list:Array = [-2, -1, 0, 1, 2.5, 3];
+var naturalNumbers:Array = list.filter(isNaturalNumber);
+// naturalNumbers is now [1, 3]
+</code></pre><p><code>Array.filter</code> takes one argument: a function. It applies that function to each
+element of the array in turn. If the function returns false, that element is not
+included in the result. <code>Array.filter</code> requires the filter function to have
+three arguments, but if we want the flexibility of anonymous functions, this
+gets cumbersome:</p>
+<pre><code>/* figure 09 */
+var naturalNumbers:Array = list.filter(
+  function(n:Number, i:int, a:Array):Boolean {
+    return n &gt;= 1 &amp;&amp; n % 1 == 0;
+  });
+</code></pre><p><a href="http://www.github.com/amacdougall/underscore.as">underscore.as</a> accepts
+functions as simple as <code>function(e:*):Boolean</code>. The underlying
+concept, however, is identical.</p>
+<p>This approach becomes more powerful when we start to pre-define filter functions
+and call them on demand. For instance, imagine a product list with filter
+buttons:</p>
+<pre><code>/* figure 10 */
+public class ProductList extends Sprite {
+  private var products:Array;
+
+  // filter buttons
+  public var justAddedButton:SimpleButton;
+  public var freeShippingButton:SimpleButton;
+  public var closeoutButton:SimpleButton;
+
+  public function ProductList() {
+    products = loadProductsFromDatabase();
+    linkFilter(justAddedButton, justAdded);
+    linkFilter(freeShippingButton, freeShipping);
+    linkFilter(closeoutButton, closeout);
+  }
+
+  /** Display the supplied product list on screen. */
+  public function display(productList:Array):void {
+    // draw only these products to the screen
+  }
+
+  /** Convenience method for hooking up filters to buttons. */
+  private function linkFilter(button:SimpleButton, filter:Function):void {
+    button.addEventListener(MouseEvent.CLICK,
+      function(event:MouseEvent):void {
+        display(products.filter(filter));
+      });
+  }
+
+  /** Allows only Products whose justAdded property is true. */
+  private function justAdded(p:Product, i:int, a:Array):Boolean {
+    return p.justAdded;
+  }
+
+  /** Allows only Products whose freeShipping property is true. */
+  private function freeShipping(p:Product, i:int, a:Array):Boolean {
+    return p.freeShipping;
+  }
+
+  /** Allows only Products whose closeout property is true. */
+  private function closeout(p:Product, i:int, a:Array):Boolean {
+    return p.closeout;
+  }
+}
+</code></pre><p>In this case, although we&rsquo;re passing the filter functions around as values, the
+functions themselves <em>were</em> declared with the <code>function</code> keyword. This doesn&rsquo;t
+mean we can&rsquo;t treat them as variables! It just means that for those functions,
+the value of <code>this</code> is fixed for all time, and those functions are available
+even before code execution reaches that point in the file.</p>
+<h2 id="functions-with-superpowers">
+  Functions with superpowers
+  <a class="anchor" href="#functions-with-superpowers">#</a>
+</h2>
+<p>In the next post, we&rsquo;ll discuss closures—anonymous functions which contain
+extra data. You&rsquo;ve already seen a simple closure when we used the <code>self</code>
+variable to get a durable reference to <code>this</code>. But closures can do far more than
+that; in fact, with closures, it is possible to create a sort of mini-language
+within ActionScript 3, replacing loops and branches with terse, targeted
+commands, or even changing the behavior of existing functions. This is common in
+languages like Lisp or Ruby, where this type of programming is called a
+Domain-Specific Language, or DSL. The popular JavaScript library jQuery can be
+considered a comprehensive DSL for front-end programming; aspects of Rails can
+be considered a DSL for web programming (and much more). We can tap into similar
+power in ActionScript 3 if we choose.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#anonymous-functions-in-as3">Anonymous Functions in AS3</a>
+      <ul>
+        <li><a href="#anonymous-functions">Anonymous Functions</a></li>
+        <li><a href="#normal-event-listeners">Normal Event Listeners</a></li>
+        <li><a href="#state-based-event-listeners">State-based Event Listeners</a></li>
+        <li><a href="#anonymous-functions-and-this">Anonymous functions and <code>this</code></a></li>
+        <li><a href="#user-input-interpretation">User input interpretation</a></li>
+        <li><a href="#array-filtering">Array filtering</a></li>
+        <li><a href="#functions-with-superpowers">Functions with superpowers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
