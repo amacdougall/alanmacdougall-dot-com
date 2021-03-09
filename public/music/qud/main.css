@@ -1,0 +1,19 @@
+body {
+  font-family: Georgia, Palatino, serif;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.song-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
