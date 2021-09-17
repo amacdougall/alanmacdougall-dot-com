@@ -2,6 +2,10 @@ body {
   font-family: Georgia, Palatino, serif;
 }
 
+.header {
+  padding: 1.5rem;
+}
+
 h1 {
   font-size: 2em;
   font-weight: bold;
@@ -16,4 +20,9 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.song-card {
+  width: 560px;
+  padding: 1.5rem;
 }
