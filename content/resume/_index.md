@@ -11,6 +11,8 @@ alanmacdougall@gmail.com
 alanmacdougall.com  
 github.com/amacdougall  
 
+For more detail, visit my [professional work](/professional-work) page.
+
 ## Skills
 
 Engineering management
@@ -22,16 +24,48 @@ Refactoring legacy code into efficient modern systems
 
 ## Languages and Frameworks
 
-**JavaScript**: React.js, Redux, modern JS practices including ES6  
+**JavaScript**: React.js, Redux, modern JS practices
 **Ruby**: Rails, REST APIs, scripting  
 **SQL**: query composition and optimization  
-And for fun: Clojure/ClojureScript, Python  
+For fun: Clojure/ClojureScript, Python  
+The distant past: ActionScript, Java, C#, PHP  
 
 ## Experience
 
-**GetFeedback: WIP**
+**Senior Developer**, full stack, GetFeedback, Jun 2022 – Present
 
-**Senior Developer**, full stack with webapp emphasis, Paperless Post, May 2011 – Dec 2017
+Following a corporate change of direction, the number of teams was reduced, and
+I took on an IC role.
+
+* Maintained and improved the existing Salesforce integration
+* With co-workers, implemented additional Zendesk integration features
+* Architectural responsibility for deciding our future Salesforce integration
+  strategy
+
+**Engineering Manager**, GetFeedback, Oct 2019 – Jun 2022
+
+* Led a team of five developers responsible for third-party integrations
+* Worked with a product manager and a designer to plan the future of the application
+* We created a new Salesforce integration microservice
+* We built a contact database for survey response attribution, with client-side spreadsheet import
+* We helped build a Zendesk integration upon news of a possible merger
+* We maintained and improved our existing Salesforce integration
+* Management style emphasized stability, medium-term goals, and clear business rationales
+
+**Senior Developer**, full stack, GetFeedback, Apr 2018 – Oct 2019
+
+* Small team: I had responsibility for every aspect of the application
+* Many improvements and refinements to the Salesforce integration at the heart of the business
+* Implemented a print-friendly view of one of our main analytics reports;
+  sounded simple until I found myself reading the Chromium source code
+* Wrote a quick and dirty tool to suggest possible fields for univariate segmentation
+* Implemented import and export of spreadsheets for multilanguage translations
+* With a co-worker, created a workflow generation feature
+* With a co-worker, added Twilio as a survey distribution method
+* A lot of backend work to support tax calculation
+* Connected one of our main analytics views to a live-updating object database
+
+**Senior Developer**, full stack, Paperless Post, May 2011 – Dec 2017
 
 * Introduced React.js to the company through tech talks and mentorship
 * Architected and developed the card design tool using React.js
@@ -45,21 +79,13 @@ And for fun: Clojure/ClojureScript, Python
 
 **Senior Developer**, The Phoenix Group, 2007–2011
 
-The Phoenix Group was a Long Island-based agency which created interactive
-marketing and sales tools for its clients. Projects included:
+A digital agency in Long Island. Implemented many fascinating interactive
+marketing experiences. Ask me for some war stories.
  
-* A real estate sales tool integrating geographical data with Google Earth to
-  show overlays and points of interest on a giant touchscreen kiosk
-* An interactive configurator for complex office printing systems
-* Eventually, a framework for dynamically generating configurators for various
-  printing systems
-* Dozens of interactive multimedia marketing websites
-
 **Freelance Web Developer**, 2000–2007
 
-The journeyman phase of my career, in the Chicago and Milwaukee areas. Mostly
-server-side web development and self-contained client-side Flash apps. PHP,
-Java, C#, Flash, the works. Details available on request.
+A broad range of contract work. Many tech stacks, many levels. A real education;
+details available on request. A lot of great stories here as well.
 
 ## Education
 

@@ -6,9 +6,63 @@ title: "Professional Work"
 
 # Professional Work
 
+## At SurveyMonkey
+
+As manager of the team responsible for third-party integrations in GetFeedback,
+I led a team of five developers. I worked with a product manager and a designer
+to plan the future of the application. During this time:
+
+* We created a new Salesforce integration microservice, with an experimental
+  frontend. It ran within a Kafka-based microservice architecture that hosted an
+  increasing number of services, as part of an initiative to unify GetFeedback
+  and another recent acquisition, Usabilla.
+* We built a contact database for survey response attribution, with an
+  innovative client-side spreadsheet import system. This system was designed as
+  the centerpiece of a customer-experience management platform which would
+  encompass GetFeedback and third-party CRMs.
+* When Zendesk and SurveyMonkey announced a planned merger, we played a crucial
+  part in a crash effort to build a Zendesk integration. The merger fell
+  through, but the Zendesk integration is now available to all customers.
+* Through it all, we continued to maintain and improve our existing Salesforce
+  integration.
+
+There were several changes of direction in this period, and so my management
+style emphasized stability, medium-term goals, and a clear business rationale
+for each effort. My team had excellent retention despite general attrition, and
+feedback from my managers and team members emphasized my calm and positive
+attitude. (Full disclosure: I was sweating bullets half the time.)
+
 ## At GetFeedback
 
-This story is still being written.
+As a full-stack developer on a small team, I had responsibility for every aspect
+of the GetFeedback application. Using Rails and JavaScript, I did countless
+features and bugfixes.
+
+* I made many improvements and refinements to the Salesforce integration at the
+  heart of our business.
+* I implemented a print-friendly view of one of our main analytics reports, a
+  surprisingly complex task that got deep into browser-level rendering, and even
+  saw me analyzing the Chromium source code to understand the graphics pipeline.
+* I wrote a quick and dirty tool to suggest possible fields for univariate
+  segmentation, filtering out fields whose datasets were too noisy, too sparse,
+  too this, too that.
+* I implemented import and export of spreadsheets for multilanguage
+  translations. This was a fun job that got me deep into the various specs for
+  language naming, string encoding, and spreadsheet parsing. I ended up with a
+  lot of respect for UTF-8.
+* With a co-worker, I created the Actions feature, which permits customers to
+  easily generate complex workflows for established use cases. There is now an
+  entire team working on a similar concept.
+* I played a large part in integrating Twilio with our existing distribution
+  methods, permitting SMS survey distribution. Twilio is great! I understand now
+  why they had billboards all over SF just saying "ask your developer."
+* I did a lot of backend work on our billing and subscription systems. Tax
+  calculation is hard, and even filling in the gaps in a third-party API was a
+  real task.
+* With co-workers, I connected one of our main analytics views to a
+  live-updating object database instead of Postgres, greatly improving its
+  responsiveness and filtering abilities.
+* And amid all this, I fixed countless bugs and did many small features.
 
 ## At Paperless Post
 
