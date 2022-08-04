@@ -13,6 +13,8 @@ github.com/amacdougall
 
 For more detail, visit my [professional work](/professional-work) page.
 
+You may wish to download this [abridged single-page PDF version](/resume.pdf).
+
 ## Skills
 
 Engineering management
