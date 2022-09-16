@@ -17,7 +17,7 @@ You may wish to download this [abridged single-page PDF version](/resume.pdf).
 
 ## Skills
 
-Engineering management
+Engineering management  
 Full-stack web development  
 Single-page web application development  
 REST API development  
@@ -26,7 +26,7 @@ Refactoring legacy code into efficient modern systems
 
 ## Languages and Frameworks
 
-**JavaScript**: React.js, Redux, modern JS practices
+**JavaScript**: React.js, Redux, modern JS practices  
 **Ruby**: Rails, REST APIs, scripting  
 **SQL**: query composition and optimization  
 For fun: Clojure/ClojureScript, Python  
@@ -36,10 +36,9 @@ The distant past: ActionScript, Java, C#, PHP
 
 **Senior Developer**, full stack, GetFeedback, Jun 2022 – Present
 
-Following a corporate change of direction, the number of teams was reduced, and
-I took on an IC role.
+To support a corporate change of direction, I returned to an IC role.
 
-* Maintained and improved the existing Salesforce integration
+* Maintained and improved existing Salesforce integrations
 * With co-workers, implemented additional Zendesk integration features
 * Architectural responsibility for deciding our future Salesforce integration
   strategy
@@ -83,7 +82,7 @@ I took on an IC role.
 
 A digital agency in Long Island. Implemented many fascinating interactive
 marketing experiences. Ask me for some war stories.
- 
+
 **Freelance Web Developer**, 2000–2007
 
 A broad range of contract work. Many tech stacks, many levels. A real education;
