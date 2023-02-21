@@ -34,7 +34,7 @@ The distant past: ActionScript, Java, C#, PHP
 
 ## Experience
 
-**Senior Developer**, full stack, GetFeedback, Jun 2022 – Present
+**Senior Developer**, full stack, GetFeedback, Jun 2022 – Feb 2023
 
 To support a corporate change of direction, I returned to an IC role.
 
