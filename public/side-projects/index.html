@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Side Projects #  I write code in my spare time for the fun of it, and I have plenty of other hobbies, so most of these projects are incomplete. Check out the source code, though; I have put a lot of time into these babies over the years.
 Mazes #  Github link
+Live demo
 I spent a while working through Mazes for Programmers, by Jamis Buck. The book is written in Ruby, but I reimplemented many of the algorithms in Clojure.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Side Projects" />
 <meta property="og:description" content="" />
@@ -406,6 +407,7 @@ though; I have put a lot of time into these babies over the years.</p>
   <a class="anchor" href="#mazes">#</a>
 </h2>
 <p><a href="https://github.com/amacdougall/mazes">Github link</a></p>
+<p><a href="/mazes">Live demo</a></p>
 <p>I spent a while working through <a href="https://pragprog.com/book/jbmaze/mazes-for-programmers">Mazes for Programmers</a>,
 by Jamis Buck. The book is written in Ruby, but I reimplemented many of the
 algorithms in Clojure. In Ruby, you get to implement the algorithms more or less
@@ -414,6 +416,12 @@ style. This has been a pleasant challenge.</p>
 <p>In particular, check out the maze generation and pathfinding algorithms in <a href="https://github.com/amacdougall/mazes/tree/master/src/cljc/mazes">this folder</a>.
 There is also a React-based (via <a href="https://github.com/Day8/re-frame">re-frame</a>)
 front end application which demonstrates some of the algorithms.</p>
+<p>Please check out the <a href="/mazes">demo</a>! I did an implementation of Dijkstra&rsquo;s
+Algorithm that updates the maze visualization to show the algorithm&rsquo;s update set
+as it tries to find the bottom-right cell of the maze.</p>
+<p>The maze itself is rendered in SVG, all under control of React. After all, SVG
+is valid HTML, so React can efficiently update it. This opens interesting UI
+possibilities that aren&rsquo;t already covered by existing component libraries.</p>
 <h2 id="alpha-counter">
   Alpha Counter
   <a class="anchor" href="#alpha-counter">#</a>

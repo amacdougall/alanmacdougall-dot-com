@@ -14,6 +14,8 @@ though; I have put a lot of time into these babies over the years.
 
 [Github link](https://github.com/amacdougall/mazes)
 
+[Live demo](/mazes)
+
 I spent a while working through [Mazes for Programmers](https://pragprog.com/book/jbmaze/mazes-for-programmers),
 by Jamis Buck. The book is written in Ruby, but I reimplemented many of the
 algorithms in Clojure. In Ruby, you get to implement the algorithms more or less
@@ -23,6 +25,14 @@ style. This has been a pleasant challenge.
 In particular, check out the maze generation and pathfinding algorithms in [this folder](https://github.com/amacdougall/mazes/tree/master/src/cljc/mazes).
 There is also a React-based (via [re-frame](https://github.com/Day8/re-frame))
 front end application which demonstrates some of the algorithms.
+
+Please check out the [demo](/mazes)! I did an implementation of Dijkstra's
+Algorithm that updates the maze visualization to show the algorithm's update set
+as it tries to find the bottom-right cell of the maze.
+
+The maze itself is rendered in SVG, all under control of React. After all, SVG
+is valid HTML, so React can efficiently update it. This opens interesting UI
+possibilities that aren't already covered by existing component libraries.
 
 ## Alpha Counter
 
