@@ -34,7 +34,7 @@ The distant past: ActionScript, Java, C#, PHP
 
 ## Experience
 
-**Senior Developer**, full stack, GetFeedback, Jun 2022 – Feb 2023
+**Senior Developer**, full stack, SurveyMonkey, Jun 2022 – Feb 2023
 
 To support a corporate change of direction, I returned to an IC role.
 
@@ -43,7 +43,9 @@ To support a corporate change of direction, I returned to an IC role.
 * Architectural responsibility for deciding our future Salesforce integration
   strategy
 
-**Engineering Manager**, GetFeedback, Oct 2019 – Jun 2022
+**Engineering Manager**, SurveyMonkey, Oct 2019 – Jun 2022
+
+GetFeedback was acquired by SurveyMonkey in 2019.
 
 * Led a team of five developers responsible for third-party integrations
 * Worked with a product manager and a designer to plan the future of the application
