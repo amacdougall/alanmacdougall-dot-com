@@ -36,7 +36,8 @@ attitude. (Full disclosure: I was sweating bullets half the time.)
 
 As a full-stack developer on a small team, I had responsibility for every aspect
 of the GetFeedback application. Using Rails and JavaScript, I did countless
-features and bugfixes.
+features and bugfixes. This system was based on Ember.js, which was a fun trip
+outside the React box.
 
 * I made many improvements and refinements to the Salesforce integration at the
   heart of our business.

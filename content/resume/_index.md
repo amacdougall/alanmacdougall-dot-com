@@ -26,7 +26,7 @@ Refactoring legacy code into efficient modern systems
 
 ## Languages and Frameworks
 
-**JavaScript**: React.js, Redux, modern JS practices  
+**JavaScript**: React.js, Redux, Ember, modern JS practices  
 **Ruby**: Rails, REST APIs, scripting  
 **SQL**: query composition and optimization  
 For fun: Clojure/ClojureScript, Python  
