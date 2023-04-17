@@ -11,13 +11,14 @@ alanmacdougall@gmail.com
 alanmacdougall.com  
 github.com/amacdougall  
 
-For more detail, visit my [professional work](/professional-work) page.
+For even more detail, visit my [professional work](/professional-work) page.
 
 You may wish to download this [abridged single-page PDF version](/resume.pdf).
+It's in resume-speak, but it has the same core information.
 
 ## Skills
 
-Engineering management  
+Engineering management (SDLC, agile, etc)  
 Full-stack web development  
 Single-page web application development  
 REST API development  
@@ -26,7 +27,7 @@ Refactoring legacy code into efficient modern systems
 
 ## Languages and Frameworks
 
-**JavaScript**: React.js, Redux, Ember, modern JS practices  
+**JavaScript**: React.js, Redux, Ember, Node.js, GraphQL  
 **Ruby**: Rails, REST APIs, scripting  
 **SQL**: query composition and optimization  
 For fun: Clojure/ClojureScript, Python  
@@ -34,26 +35,22 @@ The distant past: ActionScript, Java, C#, PHP
 
 ## Experience
 
+
 **Senior Developer**, full stack, SurveyMonkey, Jun 2022 – Feb 2023
+**Engineering Manager**, SurveyMonkey, Oct 2019 – Feb 2023
 
-To support a corporate change of direction, I returned to an IC role.
-
-* Maintained and improved existing Salesforce integrations
-* With co-workers, implemented additional Zendesk integration features
-* Architectural responsibility for deciding our future Salesforce integration
-  strategy
-
-**Engineering Manager**, SurveyMonkey, Oct 2019 – Jun 2022
-
-GetFeedback was acquired by SurveyMonkey in 2019.
+Joined when GetFeedback was acquired by SurveyMonkey in 2019.
 
 * Led a team of five developers responsible for third-party integrations
+* Early on, hired three developers to bring the team to full strength
 * Worked with a product manager and a designer to plan the future of the application
-* We created a new Salesforce integration microservice
+* We created a new Salesforce integration microservice which ran in a Kafka environment
 * We built a contact database for survey response attribution, with client-side spreadsheet import
 * We helped build a Zendesk integration upon news of a possible merger
 * We maintained and improved our existing Salesforce integration
+* I personally took ownership of the legacy SurveyMonkey Salesforce integration, preserving a significant customer base
 * Management style emphasized stability, medium-term goals, and clear business rationales
+* Fun fact: I was a write-in winner for the engineering division's "Customer Advocate" award in 2021
 
 **Senior Developer**, full stack, GetFeedback, Apr 2018 – Oct 2019
 
