@@ -31,5 +31,3 @@ successful system as part of a skilled team. Some of my contributions are
 
 In my spare time, I have written some [technical articles](/technical-writing/)
 and hacked on some [side projects](/side-projects/).
-
-I am currently looking for work.
