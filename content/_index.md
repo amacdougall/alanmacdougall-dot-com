@@ -25,11 +25,11 @@ engineering manager on the team which handles our most high-value integrations.
 For six and a half years before that, I worked as a "middle-end" developer
 melding business logic with UI programming in a complex single-page application,
 the card design system at the heart of [Paperless
-Post](https://www.paperlesspost.com). I am proud to be have worked on such a
+Post](https://www.paperlesspost.com). I am proud to have worked on such a
 successful system as part of a skilled team. Some of my contributions are
 [summarized here](/professional-work/).
 
 In my spare time, I have written some [technical articles](/technical-writing/)
 and hacked on some [side projects](/side-projects/).
 
-I am not looking for work.
+I am currently looking for work.
