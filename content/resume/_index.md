@@ -13,8 +13,9 @@ github.com/amacdougall
 
 For even more detail, visit my [professional work](/professional-work) page.
 
-You may wish to download this [abridged single-page PDF version](/resume.pdf).
-It's in resume-speak, but it has the same core information.
+You may wish to download this abridged single-page version [as a PDF](/alan_macdougall_resume.pdf)
+or [as a Word document](/alan_macdougall_resume.docx). It's in resume-speak, but
+it has the same core information.
 
 ## Skills
 
@@ -35,9 +36,7 @@ The distant past: ActionScript, Java, C#, PHP
 
 ## Experience
 
-
-**Senior Developer**, full stack, SurveyMonkey, Jun 2022 – Feb 2023
-**Engineering Manager**, SurveyMonkey, Oct 2019 – Feb 2023
+**Engineering Manager**, SurveyMonkey, Oct 2019 – Feb 2023  
 
 Joined when GetFeedback was acquired by SurveyMonkey in 2019.
 
