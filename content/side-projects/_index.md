@@ -12,7 +12,7 @@ though; I have put a lot of time into these babies over the years.
 
 ## Raise Your Game
 
-TypeScript, React, GraphQL, MongoDB
+TypeScript, React, GraphQL, MongoDB, Docker
 
 [Github link](https://github.com/amacdougall/raiseyourgame)
 
