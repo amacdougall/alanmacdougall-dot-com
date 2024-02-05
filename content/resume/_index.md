@@ -21,20 +21,36 @@ it has the same core information.
 
 Engineering management (SDLC, agile, etc)  
 Full-stack web development  
-Single-page web application development  
 REST API development  
 Domain modeling and application architecture  
 Refactoring legacy code into efficient modern systems  
 
 ## Languages and Frameworks
 
-**JavaScript**: React.js, Redux, Ember, Node.js, GraphQL  
+**JavaScript/TypeScript**: React.js, Redux, Node.js, GraphQL  
 **Ruby**: Rails, REST APIs, scripting  
 **SQL**: query composition and optimization  
 For fun: Clojure/ClojureScript, Python  
 The distant past: ActionScript, Java, C#, PHP  
 
 ## Experience
+
+**Senior Engineering Manager**, Narvar, Jun 2023 — present
+
+* Lead a team of five developers responsible for Shopify Returns, a reverse
+  logistics application for Shopify
+* Work across time zones and continents to manage a distributed team
+* Work with product and design on initial technical specifications for new
+  projects
+* Refine technical specifications with team developers to produce estimates and
+  milestones
+* Act as the front line to diagnose and assign tickets
+* Work directly with customers as needed
+* Contribute technically on smaller bugs and features
+* Reached across teams to rework a chaotic and failing ticket prioritization
+  process, improving time to resolution by 50% and decreasing status update
+  requests by 90%
+* Delivered multiple CEO-requested experimental integrations precisely on budget
 
 **Engineering Manager**, SurveyMonkey, Oct 2019 – Feb 2023  
 
@@ -72,14 +88,14 @@ Joined when GetFeedback was acquired by SurveyMonkey in 2019.
 * Developed the canvas-based card-display module which currently powers every
   aspect of the core business: desktop web, mobile web, the iOS app, and the
   image rendering pipeline
-* Designed and updated the underlying database tables, Rails models, and API
-  routes
+* Designed and updated the underlying database tables, models, and API routes
 * Over 500 Github pull requests worth of features, bugfixes, and refactorings
 
 **Senior Developer**, The Phoenix Group, 2007–2011
 
 A digital agency in Long Island. Implemented many fascinating interactive
-marketing experiences. Ask me for some war stories.
+marketing experiences. Ask me for some war stories. ...nobody ever actually asks
+me for the war stories, but there are some good ones! Ever heard of SAX?
 
 **Freelance Web Developer**, 2000–2007
 

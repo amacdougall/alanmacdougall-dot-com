@@ -10,7 +10,27 @@ I write code in my spare time for the fun of it, and I have plenty of other
 hobbies, so most of these projects are incomplete. Check out the source code,
 though; I have put a lot of time into these babies over the years.
 
+## Raise Your Game
+
+TypeScript, React, GraphQL, MongoDB
+
+[Github link](https://github.com/amacdougall/raiseyourgame)
+
+[Production site](https://raiseyourga.me)
+
+This is a YouTube video annotation app. Plug in a URL, then when something
+interesting happens, just start typing. The video will pause until you hit Enter
+to submit the comment. Share the URL, and the recipient can see your comments
+appear as the video plays. I originally envisioned it as a way to share advice
+on gameplay footage, hence the name.
+
+Written in TypeScript, with a MongoDB database. GraphQL for client/server
+communication. I've wanted to make this application for a while; you can see an
+unfinished Clojure version on my Github as well.
+
 ## Mazes
+
+Clojure, ClojureScript, React
 
 [Github link](https://github.com/amacdougall/mazes)
 
@@ -36,6 +56,8 @@ possibilities that aren't already covered by existing component libraries.
 
 ## Alpha Counter
 
+Clojure, ClojureScript, React
+
 [Github link](https://github.com/amacdougall/alpha-counter)
 
 A life counter for the [Yomi card game](http://www.sirlin.net/yomi/). Try it out
@@ -49,9 +71,13 @@ I wrote this because I didn't like adding up damage mentally and tracking it on
 paper while playing the game. A great example of solving real-life problems with
 programming.
 
-## Raise Your Game
+## Raise Your Game (unfinished Clojure edition)
 
-[Github link](https://github.com/amacdougall/raiseyourgame)
+Clojure, ClojureScript
+
+[Github link](https://github.com/amacdougall/raiseyourgame-clojure)
+
+See the finished TypeScript version at the top of this page.
 
 Although this project was intended to become a Youtube annotation site, I got
 deeply sidetracked into Clojure database and testing code. Check out the
@@ -65,6 +91,8 @@ project! However, I will say that there is something really satisfying about
 slowly building up a framework of well-tested code.
 
 ## Wrongtangular!
+
+ClojureScript
 
 [Github link](https://github.com/amacdougall/wrongtangular)
 
@@ -86,6 +114,8 @@ meant to be used in the Paperless Post Rails REPL to generate instances of
 `Wrongtangular!`.
 
 ## underscore.as
+
+ActionScript
 
 [Github link](https://github.com/amacdougall/underscore.as)
 

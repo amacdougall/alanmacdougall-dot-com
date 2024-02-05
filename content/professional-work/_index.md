@@ -6,6 +6,28 @@ title: "Professional Work"
 
 # Professional Work
 
+## At Narvar
+
+As manager of the team responsible for Narvar Returns & Exchanges for Shopify, I
+lead a team of five developers, and we're still hiring. I work with a product
+manager and a designer to plan the future of the application. Some highlights:
+
+* I reached across teams to rework our ticket prioritization and scheduling
+  system. Previously, the team manager took direct responsibility for pulling
+  priority issues out of a chaotic and disorganized backlog. I brought
+  customer-facing teams into the process and gave them a leading role in
+  deciding ticket priorities. This involved negotiations among six different
+  managers of teams with different constituencies and priorities, but ultimately
+  increased time to resolution by 50% and reduced status update requests by 90%.
+* The mid-market Shopify Returns product has always been a ground for
+  experimentation before features are implemented in the enterprise product.
+  Repeatedly, we took high-priority CEO-driven projects with externally imposed
+  deadlines, and landed those projects precisely on time.
+* I act as the front line to assess and diagnose incoming tickets.
+* An engineering manager should know the codebase. I make sure to spend time
+  delivering bugfixes and minor features every week.
+* I work across time zones and continents to manage a distributed team.
+
 ## At SurveyMonkey
 
 As manager of the team responsible for third-party integrations in GetFeedback,
