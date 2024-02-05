@@ -52,7 +52,7 @@ The distant past: ActionScript, Java, C#, PHP
   requests by 90%
 * Delivered multiple CEO-requested experimental integrations precisely on budget
 
-**Engineering Manager**, SurveyMonkey, Oct 2019 – Feb 2023  
+**Engineering Manager**, SurveyMonkey, Oct 2019 – Mar 2023  
 
 Joined when GetFeedback was acquired by SurveyMonkey in 2019.
 
